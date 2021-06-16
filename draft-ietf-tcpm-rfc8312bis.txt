@@ -6,13 +6,13 @@ TCPM                                                               L. Xu
 Internet-Draft                                                       UNL
 Obsoletes: 8312 (if approved)                                      S. Ha
 Intended status: Standards Track                                Colorado
-Expires: 12 December 2021                                        I. Rhee
+Expires: 18 December 2021                                        I. Rhee
                                                                   Bowery
                                                                  V. Goel
                                                               Apple Inc.
                                                           L. Eggert, Ed.
                                                                   NetApp
-                                                            10 June 2021
+                                                            16 June 2021
 
 
                CUBIC for Fast and Long-Distance Networks
@@ -71,7 +71,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 December 2021.
+   This Internet-Draft will expire on 18 December 2021.
 
 Copyright Notice
 
@@ -340,8 +340,8 @@ Table of Contents
    β__cubic_: CUBIC multiplication decrease factor as described in
    Section 4.6.
 
-   α__aimd_: CUBIC additive increase factor used in AIMD-friendly region
-   as described in Section 4.3.
+   α__cubic_: CUBIC additive increase factor used in AIMD-friendly
+   region as described in Section 4.3.
 
    _C_: constant that determines the aggressiveness of CUBIC in
    competing with other congestion control algorithms in high BDP
@@ -484,41 +484,32 @@ Table of Contents
 
    The AIMD-friendly region is designed according to the analysis in
    [FHP00], which studies the performance of an AIMD algorithm with an
-   additive factor of α__aimd_ (segments per _RTT_) and a multiplicative
-   factor of β__aimd_, denoted by AIMD(α__aimd_, β__aimd_).
-   Specifically, the average congestion window size of AIMD(α__aimd_,
-   β__aimd_) can be calculated using Figure 3.  The analysis shows that
-   AIMD(α__aimd_, β__aimd_) with
+   additive factor of α (segments per _RTT_) and a multiplicative factor
+   of β, denoted by AIMD(α, β).  Specifically, the average congestion
+   window size of AIMD(α, β) can be calculated using Figure 3.
 
-                                      1 - β
-                                           cubic
-                          α     = 3 * ----------
-                           aimd       1 + β
-                                           cubic
-
-   achieves the same average window size as AIMD TCP that uses AIMD(1,
-   0.5).
-
-                                           ___________________
-                                          /α     * (1 + β    )
-                                         /  aimd         aimd
-            AVG_AIMD(α    , β    ) = |  /  -------------------
-                      aimd   aimd    | /   2 * (1 - β    ) * p
-                                     |/              aimd
+                                        _______________
+                                       /  α * (1 + β)
+                   AVG_AIMD(α, β) = | / ---------------
+                                    |/  2 * (1 - β) * p
 
                                   Figure 3
 
-   Based on the above analysis, CUBIC uses Figure 4 to estimate the
-   window size _W_est_ of AIMD(α__aimd_, β__aimd_) with
+   By the same analysis, to achieve the same average window size as AIMD
+   TCP that uses AIMD(1, 0.5), α must be equal to,
 
-                                      1 - β
-                                           cubic
-                          α     = 3 * ----------
-                           aimd       1 + β
-                                           cubic
+                                     1 - β
+                                 3 * -----
+                                     1 + β
 
-                          β     = β
-                           aimd    cubic
+   Thus, CUBIC uses Figure 4 to estimate the window size _W_est_ in the
+   AIMD-friendly region with
+
+                                       1 - β
+                                            cubic
+                          α      = 3 * ----------
+                           cubic       1 + β
+                                            cubic
 
    which achieves the same average window size as AIMD TCP.  When
    receiving an ACK in congestion avoidance (where _cwnd_ could be
@@ -530,15 +521,15 @@ Table of Contents
    avoidance stage.  After that, on every ACK, _W_est_ is updated using
    Figure 4.
 
-                                         segments_acked
-                   W    = W    + α     * --------------
-                    est    est    aimd        cwnd
+                                          segments_acked
+                   W    = W    + α      * --------------
+                    est    est    cubic        cwnd
 
                                   Figure 4
 
    Note that once _W_est_ reaches _W_max_, that is, _W_est_ >= _W_max_,
    CUBIC needs to start probing to determine the new value of _W_max_.
-   At this point, α__aimd_ SHOULD be set to 1 to ensure that CUBIC can
+   At this point, α__cubic_ SHOULD be set to 1 to ensure that CUBIC can
    achieve the same congestion window increment as AIMD TCP, which uses
    AIMD(1, 0.5).
 
@@ -1149,6 +1140,9 @@ B.1.  Since draft-ietf-tcpm-rfc8312bis-02
 
    *  clarity on setting alpha__aimd_ to 1 (68
       (https://github.com/NTAP/rfc8312bis/issues/68))
+
+   *  introduce alpha__cubic_ (64 (https://github.com/NTAP/rfc8312bis/
+      issues/64))
 
 B.2.  Since draft-ietf-tcpm-rfc8312bis-01
 

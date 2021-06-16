@@ -44,7 +44,170 @@ obsoleting  .
 -->
 <link href="draft-ietf-tcpm-rfc8312bis.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
-<style type="text/css">@import url('https://martinthomson.github.io/i-d-template/fonts.css');
+<style type="text/css">@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Italic'), local('Lora-Italic'), url('https://martinthomson.github.io/rfc-css/fonts/lora-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Lora Regular'), local('Lora-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/lora-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic-ext.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-cyrillic.woff2') format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Lora Bold'), local('Lora-Bold'), url('https://martinthomson.github.io/rfc-css/fonts/lora-bold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-vietnamese.woff2') format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Cabin Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Cabin Condensed SemiBold'), local('CabinCondensed-SemiBold'), url('https://martinthomson.github.io/rfc-css/fonts/cabincondensed-semibold-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Oxygen Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Oxygen Mono'), local('OxygenMono-Regular'), url('https://martinthomson.github.io/rfc-css/fonts/oxygenmono-regular-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 html {
   --background-color: #fff;
@@ -859,7 +1022,7 @@ address div.right {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Xu, et al.</td>
-<td class="center">Expires 12 December 2021</td>
+<td class="center">Expires 18 December 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -875,12 +1038,12 @@ address div.right {
 <a href="https://datatracker.ietf.org/doc/html/rfc8312" class="eref">8312</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-06-10" class="published">10 June 2021</time>
+<time datetime="2021-06-16" class="published">16 June 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-12-12">12 December 2021</time></dd>
+<dd class="expires"><time datetime="2021-12-18">18 December 2021</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -965,7 +1128,7 @@ do this.<a href="#section-note.2-3" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 12 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 18 December 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -993,161 +1156,161 @@ do this.<a href="#section-note.2-3" class="pilcrow">¶</a></p>
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.1">
+<nav class="toc"><ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.2">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-conventions" class="xref">Conventions</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.3">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-design-principles-of-cubic" class="xref">Design Principles of CUBIC</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.3.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-principle-1-for-the-cubic-i" class="xref">Principle 1 for the CUBIC Increase Function</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-principle-2-for-aimd-friend" class="xref">Principle 2 for AIMD Friendliness</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-principle-3-for-rtt-fairnes" class="xref">Principle 3 for RTT Fairness</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.3.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-principle-4-for-the-cubic-d" class="xref">Principle 4 for the CUBIC Decrease Factor</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.4">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-cubic-congestion-control" class="xref">CUBIC Congestion Control</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.4.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-definitions" class="xref">Definitions</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.4.2.1.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.4.2.1.2.1">
                     <p id="section-toc.1-1.4.2.1.2.1.1"><a href="#section-4.1.1" class="xref">4.1.1</a>.  <a href="#name-constants-of-interest" class="xref">Constants of Interest</a></p>
 </li>
-                  <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.1.2.2">
+                  <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.1.2.2">
                     <p id="section-toc.1-1.4.2.1.2.2.1"><a href="#section-4.1.2" class="xref">4.1.2</a>.  <a href="#name-variables-of-interest" class="xref">Variables of Interest</a></p>
 </li>
                 </ul>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-window-increase-function" class="xref">Window Increase Function</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="xref">4.3</a>.  <a href="#name-aimd-friendly-region" class="xref">AIMD-Friendly Region</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.4">
                 <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="xref">4.4</a>.  <a href="#name-concave-region" class="xref">Concave Region</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.5">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.5">
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="xref">4.5</a>.  <a href="#name-convex-region" class="xref">Convex Region</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.6">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.6">
                 <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="xref">4.6</a>.  <a href="#name-multiplicative-decrease" class="xref">Multiplicative Decrease</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.7">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.7">
                 <p id="section-toc.1-1.4.2.7.1"><a href="#section-4.7" class="xref">4.7</a>.  <a href="#name-fast-convergence" class="xref">Fast Convergence</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.8">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.8">
                 <p id="section-toc.1-1.4.2.8.1"><a href="#section-4.8" class="xref">4.8</a>.  <a href="#name-timeout" class="xref">Timeout</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.9">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.9">
                 <p id="section-toc.1-1.4.2.9.1"><a href="#section-4.9" class="xref">4.9</a>.  <a href="#name-spurious-congestion-events" class="xref">Spurious Congestion Events</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.4.2.10">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.4.2.10">
                 <p id="section-toc.1-1.4.2.10.1"><a href="#section-4.10" class="xref">4.10</a>. <a href="#name-slow-start" class="xref">Slow Start</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.5">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-discussion" class="xref">Discussion</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.5.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="xref">5.1</a>.  <a href="#name-fairness-to-aimd-tcp" class="xref">Fairness to AIMD TCP</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="xref">5.2</a>.  <a href="#name-using-spare-capacity" class="xref">Using Spare Capacity</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.3">
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="xref">5.3</a>.  <a href="#name-difficult-environments" class="xref">Difficult Environments</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.4">
                 <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="xref">5.4</a>.  <a href="#name-investigating-a-range-of-en" class="xref">Investigating a Range of Environments</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.5">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.5">
                 <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="xref">5.5</a>.  <a href="#name-protection-against-congesti" class="xref">Protection against Congestion Collapse</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.6">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.6">
                 <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="xref">5.6</a>.  <a href="#name-fairness-within-the-alterna" class="xref">Fairness within the Alternative Congestion Control Algorithm</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.7">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.7">
                 <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="xref">5.7</a>.  <a href="#name-performance-with-misbehavin" class="xref">Performance with Misbehaving Nodes and Outside Attackers</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.8">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.8">
                 <p id="section-toc.1-1.5.2.8.1"><a href="#section-5.8" class="xref">5.8</a>.  <a href="#name-behavior-for-application-li" class="xref">Behavior for Application-Limited Flows</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.9">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.9">
                 <p id="section-toc.1-1.5.2.9.1"><a href="#section-5.9" class="xref">5.9</a>.  <a href="#name-responses-to-sudden-or-tran" class="xref">Responses to Sudden or Transient Events</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.5.2.10">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.5.2.10">
                 <p id="section-toc.1-1.5.2.10.1"><a href="#section-5.10" class="xref">5.10</a>. <a href="#name-incremental-deployment" class="xref">Incremental Deployment</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.6">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-security-considerations" class="xref">Security Considerations</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.7">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.8">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-references" class="xref">References</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.8.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.8.2.1">
                 <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="xref">8.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.8.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.8.2.2">
                 <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="xref">8.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.9">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-appendix.a" class="xref">Appendix A</a>.  <a href="#name-acknowledgments" class="xref">Acknowledgments</a></p>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.10">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#section-appendix.b" class="xref">Appendix B</a>.  <a href="#name-evolution-of-cubic" class="xref">Evolution of CUBIC</a></p>
-<ul class="compact toc ulEmpty">
-<li class="compact toc ulEmpty" id="section-toc.1-1.10.2.1">
+<ul class="ulEmpty compact toc">
+<li class="ulEmpty compact toc" id="section-toc.1-1.10.2.1">
                 <p id="section-toc.1-1.10.2.1.1"><a href="#section-b.1" class="xref">B.1</a>.  <a href="#name-since-draft-ietf-tcpm-rfc83" class="xref">Since draft-ietf-tcpm-rfc8312bis-02</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.2">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.2">
                 <p id="section-toc.1-1.10.2.2.1"><a href="#section-b.2" class="xref">B.2</a>.  <a href="#name-since-draft-ietf-tcpm-rfc831" class="xref">Since draft-ietf-tcpm-rfc8312bis-01</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.3">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.3">
                 <p id="section-toc.1-1.10.2.3.1"><a href="#section-b.3" class="xref">B.3</a>.  <a href="#name-since-draft-ietf-tcpm-rfc8312" class="xref">Since draft-ietf-tcpm-rfc8312bis-00</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.4">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.4">
                 <p id="section-toc.1-1.10.2.4.1"><a href="#section-b.4" class="xref">B.4</a>.  <a href="#name-since-draft-eggert-tcpm-rfc" class="xref">Since draft-eggert-tcpm-rfc8312bis-03</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.5">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.5">
                 <p id="section-toc.1-1.10.2.5.1"><a href="#section-b.5" class="xref">B.5</a>.  <a href="#name-since-draft-eggert-tcpm-rfc8" class="xref">Since draft-eggert-tcpm-rfc8312bis-02</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.6">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.6">
                 <p id="section-toc.1-1.10.2.6.1"><a href="#section-b.6" class="xref">B.6</a>.  <a href="#name-since-draft-eggert-tcpm-rfc83" class="xref">Since draft-eggert-tcpm-rfc8312bis-01</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.7">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.7">
                 <p id="section-toc.1-1.10.2.7.1"><a href="#section-b.7" class="xref">B.7</a>.  <a href="#name-since-draft-eggert-tcpm-rfc831" class="xref">Since draft-eggert-tcpm-rfc8312bis-00</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.8">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.8">
                 <p id="section-toc.1-1.10.2.8.1"><a href="#section-b.8" class="xref">B.8</a>.  <a href="#name-since-rfc8312" class="xref">Since RFC8312</a></p>
 </li>
-              <li class="compact toc ulEmpty" id="section-toc.1-1.10.2.9">
+              <li class="ulEmpty compact toc" id="section-toc.1-1.10.2.9">
                 <p id="section-toc.1-1.10.2.9.1"><a href="#section-b.9" class="xref">B.9</a>.  <a href="#name-since-the-original-paper" class="xref">Since the Original Paper</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulEmpty" id="section-toc.1-1.11">
+          <li class="ulEmpty compact toc" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#section-appendix.c" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
 </li>
         </ul>
@@ -1390,7 +1553,7 @@ maximum segment size (MSS), and the unit of all times is seconds.<a href="#secti
           </h4>
 <p id="section-4.1.1-1"><span class="contact-name">β</span><em><sub>cubic</sub></em>:
 CUBIC multiplication decrease factor as described in <a href="#mult-dec" class="xref">Section 4.6</a>.<a href="#section-4.1.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.1.1-2"><span class="contact-name">α</span><em><sub>aimd</sub></em>:
+<p id="section-4.1.1-2"><span class="contact-name">α</span><em><sub>cubic</sub></em>:
 CUBIC additive increase factor used in AIMD-friendly region
 as described in <a href="#aimd-friendly" class="xref">Section 4.3</a>.<a href="#section-4.1.1-2" class="pilcrow">¶</a></p>
 <p id="section-4.1.1-3"><em>C</em>:
@@ -1908,88 +2071,17 @@ networks, CUBIC remains in the AIMD-friendly region to achieve at
 least the same throughput as AIMD TCP.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
 <p id="section-4.3-2">The AIMD-friendly region is designed according to the analysis in
 <span>[<a href="#FHP00" class="xref">FHP00</a>]</span>, which studies the performance of an AIMD algorithm with an
-additive factor of <span class="contact-name">α</span><em><sub>aimd</sub></em> (segments per <em>RTT</em>) and
-a multiplicative factor of <span class="contact-name">β</span><em><sub>aimd</sub></em>, denoted by
-AIMD(<span class="contact-name">α</span><em><sub>aimd</sub></em>, <span class="contact-name">β</span><em><sub>aimd</sub></em>).
+additive factor of <span class="contact-name">α</span> (segments per <em>RTT</em>) and
+a multiplicative factor of <span class="contact-name">β</span>, denoted by
+AIMD(<span class="contact-name">α</span>, <span class="contact-name">β</span>).
 Specifically, the average congestion window size of
-AIMD(<span class="contact-name">α</span><em><sub>aimd</sub></em>, <span class="contact-name">β</span><em><sub>aimd</sub></em>) can be
-calculated using <a href="#eq3" class="xref">Figure 3</a>. The analysis shows that
-AIMD(<span class="contact-name">α</span><em><sub>aimd</sub></em>, <span class="contact-name">β</span><em><sub>aimd</sub></em>) with<a href="#section-4.3-2" class="pilcrow">¶</a></p>
-<div id="section-4.3-3">
-          <div class="artwork art-svg alignCenter" id="section-4.3-3.1">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="6.176ex" role="img" viewBox="0 -1580.7 8870.5 2659.1" width="20.603ex">
-              <defs>
-                <path d="M514 129h15c0 -76 -29 -139 -79 -139c-41 0 -66 45 -80 110c-35 -63 -76 -110 -154 -110c-108 0 -187 97 -187 233c0 127 74 237 196 237c87 0 136 -74 154 -146l45 136h97l-109 -263c10 -46 39 -135 69 -135c14 0 26 20 33 77zM331 208c-11 74 -37 224 -111 224 c-50 0 -101 -45 -101 -159c0 -74 17 -255 106 -255c69 0 96 137 106 190Z" id="E1-STIXWEBMAIN-3B1" stroke-width="1"></path>
-                <path d="M472 428l-91 -345s-1 -2 -1 -11c0 -11 6 -17 14 -17c10 0 25 2 64 54l12 -12c-31 -47 -85 -107 -133 -107c-33 0 -42 23 -42 55c0 13 6 34 11 50h-4c-72 -92 -134 -105 -173 -105c-63 0 -89 55 -89 119c0 132 132 332 276 332c43 0 64 -24 66 -46h1l9 33h80zM367 341 c0 41 -12 71 -50 71c-68 0 -128 -87 -162 -171c-18 -45 -28 -89 -28 -124c0 -53 31 -66 58 -66c69 0 139 95 167 190c8 26 15 66 15 100Z" id="E1-STIXWEBNORMALI-1D44E" stroke-width="1"></path>
-                <path d="M257 566c0 -26 -22 -46 -48 -46c-29 0 -48 20 -48 46c0 25 19 50 48 50c26 0 48 -25 48 -50zM227 441l-92 -364c-1 -6 -1 -10 -1 -14c0 -7 6 -10 13 -10c22 0 28 12 64 51l13 -10c-35 -45 -85 -105 -134 -105c-28 0 -40 19 -40 46c0 12 0 31 79 338c1 2 2 9 2 12 c0 17 -8 22 -31 22c-9 0 -21 -2 -28 -4l-3 16Z" id="E1-STIXWEBNORMALI-1D456" stroke-width="1"></path>
-                <path d="M667 107l13 -11c-32 -54 -84 -104 -131 -104c-22 0 -39 10 -39 49c0 7 1 17 6 37l56 221c4 14 6 23 6 40c0 20 -6 38 -24 38c-54 0 -164 -181 -179 -242l-34 -135h-79l77 299c2 9 5 25 5 40c0 20 -5 38 -23 38c-52 0 -162 -181 -178 -242l-35 -135h-78l95 374 c0 18 -6 31 -33 31c-8 0 -19 -1 -27 -2l-2 14l157 24l-44 -169h6c94 143 154 169 192 169c37 0 55 -37 55 -81c0 -17 -3 -32 -9 -52l-10 -36h5c29 52 81 114 130 147c22 15 41 22 61 22c36 0 54 -26 54 -71c0 -18 -1 -37 -7 -61l-61 -231c-1 -3 -2 -9 -2 -12 c0 -8 6 -12 15 -12c17 0 43 16 62 53Z" id="E1-STIXWEBNORMALI-1D45A" stroke-width="1"></path>
-                <path d="M527 668l-149 -598c-1 -3 -2 -9 -2 -12c0 -6 5 -9 15 -9c20 0 48 35 62 56l11 -12c-30 -45 -83 -105 -130 -105c-32 0 -40 23 -40 41c0 20 2 34 10 64h-5c-74 -93 -134 -105 -171 -105c-73 0 -88 74 -88 127c0 103 103 326 257 326c57 0 80 -26 81 -50h2l53 209 c1 4 2 8 2 12c0 13 -7 20 -33 20c-9 0 -20 -2 -27 -3l-4 15zM363 340c0 47 -15 71 -56 71c-99 0 -180 -200 -180 -296c0 -49 28 -66 56 -66c70 0 136 94 164 186c11 35 16 74 16 105Z" id="E1-STIXWEBNORMALI-1D451" stroke-width="1"></path>
-                <path d="M637 320h-589v66h589v-66zM637 120h-589v66h589v-66Z" id="E1-STIXWEBMAIN-3D" stroke-width="1"></path>
-                <path d="M61 510l-16 4c29 95 92 162 196 162c93 0 156 -55 156 -137c0 -48 -26 -98 -93 -138c44 -19 62 -31 83 -53c28 -31 44 -77 44 -129c0 -53 -17 -102 -46 -140c-48 -64 -143 -93 -232 -93c-73 0 -112 21 -112 57c0 21 18 36 41 36c17 0 33 -6 61 -26c37 -26 58 -31 86 -31 c74 0 130 68 130 153c0 76 -35 125 -104 145c-22 7 -45 10 -102 10v14c38 13 64 24 84 36c49 28 81 73 81 134c0 68 -42 102 -108 102c-62 0 -108 -32 -149 -106Z" id="E1-STIXWEBMAIN-33" stroke-width="1"></path>
-                <path d="M457 337c0 -11 -8 -23 -22 -31c-25 -15 -83 -15 -155 -56c63 -37 127 -40 154 -56c14 -8 21 -20 21 -32c0 -20 -14 -39 -39 -39c-41 0 -66 70 -143 114c0 -69 29 -131 29 -162c0 -21 -20 -42 -38 -42c-19 0 -38 21 -38 42c0 31 29 93 29 162c-52 -30 -99 -93 -121 -105 c-9 -5 -18 -8 -27 -8c-24 0 -37 15 -37 32c0 14 6 30 21 39c27 15 101 25 153 55c-52 30 -129 40 -157 57c-13 8 -20 19 -20 30c0 21 15 42 36 42c7 0 14 -2 22 -6c29 -17 73 -78 130 -108c0 69 -29 135 -29 166c0 21 19 40 38 40c18 0 38 -19 38 -40 c0 -31 -29 -96 -29 -165c72 38 99 91 126 107c8 4 15 6 22 6c21 0 36 -21 36 -42Z" id="E1-STIXWEBMAIN-2217" stroke-width="1"></path>
-                <path d="M394 0h-276v15c74 4 95 25 95 80v449c0 34 -9 49 -30 49c-10 0 -27 -5 -45 -12l-27 -10v14l179 91l9 -3v-597c0 -43 20 -61 95 -61v-15Z" id="E1-STIXWEBMAIN-31" stroke-width="1"></path>
-                <path d="M621 220h-557v66h557v-66Z" id="E1-STIXWEBMAIN-2212" stroke-width="1"></path>
-                <path d="M344 399l2 -1c78 -18 120 -92 120 -170c0 -122 -87 -238 -204 -238c-43 0 -71 8 -107 41v-167c0 -36 -10 -67 -16 -81h-84c10 21 16 52 16 81v509c0 242 88 310 196 310c79 0 160 -66 160 -155c0 -21 -4 -46 -15 -69c-13 -25 -34 -47 -68 -60zM155 485v-396 c0 -30 51 -67 104 -67c74 0 121 78 121 180c0 135 -54 179 -84 179c-21 0 -26 -7 -46 -7c-23 0 -39 10 -39 25c0 11 10 22 42 22c9 0 37 -8 52 -8c29 0 41 44 41 80c0 69 -19 162 -97 162c-62 0 -94 -62 -94 -155v-15Z" id="E1-STIXWEBMAIN-3B2" stroke-width="1"></path>
-                <path d="M363 111l12 -13c-51 -60 -113 -109 -198 -109c-97 0 -137 78 -137 155c0 140 121 297 263 297c50 0 97 -27 97 -76c0 -38 -16 -70 -54 -70c-26 0 -38 21 -38 38c0 24 29 36 29 58c0 12 -10 21 -34 21c-119 0 -176 -179 -176 -259c0 -87 49 -109 94 -109 c61 0 107 33 142 67Z" id="E1-STIXWEBNORMALI-1D450" stroke-width="1"></path>
-                <path d="M444 428l-89 -348c-1 -4 -1 -6 -1 -9c0 -8 4 -14 14 -14c21 0 40 26 57 46l5 6l13 -11c-23 -33 -74 -107 -132 -107c-29 0 -40 19 -40 52c0 9 1 25 4 37l26 95h-1c-7 -5 -97 -126 -137 -156c-23 -17 -49 -28 -72 -28c-47 0 -61 36 -61 74c0 21 3 40 8 59l59 231 c4 15 6 21 6 25c0 12 -11 23 -33 23c-7 0 -19 -1 -26 -3l-3 15l157 26l-84 -326c-2 -9 -3 -16 -3 -24c0 -21 8 -34 26 -34c25 0 65 31 100 77c43 57 89 146 109 219l21 75h77Z" id="E1-STIXWEBNORMALI-1D462" stroke-width="1"></path>
-                <path d="M214 382l4 -4c33 32 72 63 121 63c70 0 111 -69 111 -151c0 -121 -109 -301 -266 -301c-53 0 -94 18 -139 48l144 563c1 4 2 8 2 11c-1 13 -16 21 -29 21c-10 0 -22 -1 -30 -4l-3 16l158 24zM179 252l-55 -215c0 -7 32 -19 55 -19c122 0 188 174 188 276 c0 70 -38 92 -71 92c-72 0 -106 -89 -117 -134Z" id="E1-STIXWEBNORMALI-1D44F" stroke-width="1"></path>
-                <path d="M636 220h-261v-261h-66v261h-261v66h261v261h66v-261h261v-66Z" id="E1-STIXWEBMAIN-2B" stroke-width="1"></path>
-              </defs>
-              <g fill="black" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-                <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
-                <g transform="translate(543,-150)">
-                  <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                  <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                  <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                  <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                </g>
-                <use xlink:href="#E1-STIXWEBMAIN-3D" x="2375" y="0"></use>
-                <use xlink:href="#E1-STIXWEBMAIN-33" x="3339" y="0"></use>
-                <use xlink:href="#E1-STIXWEBMAIN-2217" x="4061" y="0"></use>
-                <g transform="translate(4585,0)">
-                  <g transform="translate(342,0)">
-                    <rect height="60" width="3823" x="0" y="220"></rect>
-                    <g transform="translate(60,781)">
-                      <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBMAIN-2212" x="722" y="0"></use>
-                      <g transform="translate(1630,0)">
-                        <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                        <g transform="translate(496,-254)">
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
-                        </g>
-                      </g>
-                    </g>
-                    <g transform="translate(60,-704)">
-                      <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBMAIN-2B" x="722" y="0"></use>
-                      <g transform="translate(1630,0)">
-                        <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                        <g transform="translate(496,-254)">
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg><a href="#section-4.3-3.1" class="pilcrow">¶</a>
-</div>
-</div>
-<p id="section-4.3-4">achieves the same average window size as AIMD TCP that uses
-AIMD(1, 0.5).<a href="#section-4.3-4" class="pilcrow">¶</a></p>
+AIMD(<span class="contact-name">α</span>, <span class="contact-name">β</span>) can be
+calculated using <a href="#eq3" class="xref">Figure 3</a>.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 <div id="eq3">
 <figure id="figure-3">
-          <div id="section-4.3-5.1">
-            <div class="artwork art-svg alignCenter" id="section-4.3-5.1.1">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="7.843ex" role="img" viewBox="0 -1939.5 20661.2 3376.7" width="47.987ex">
+          <div id="section-4.3-3.1">
+            <div class="artwork art-svg alignCenter" id="section-4.3-3.1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="7.843ex" role="img" viewBox="0 -1939.5 15857.6 3376.7" width="36.831ex">
                 <defs>
                   <path d="M707 0h-255v19c36 0 43 2 55 9c8 4 14 15 14 24c0 15 -7 42 -19 70l-41 94h-262l-46 -114c-5 -13 -9 -30 -9 -42c0 -31 22 -41 70 -41v-19h-199v19c58 6 67 27 126 167l206 488h20l246 -563c28 -65 42 -86 94 -92v-19zM447 257l-116 275l-115 -275h231Z" id="E1-STIXWEBMAIN-41" stroke-width="1"></path>
                   <path d="M697 662v-19c-40 -1 -63 -17 -92 -91l-222 -563h-15l-244 544c-43 97 -58 109 -108 110v19h265v-19l-28 -2c-32 -2 -45 -11 -45 -31c0 -16 9 -40 39 -107l152 -342l147 369c12 30 19 55 19 72c0 39 -32 37 -72 41v19h204Z" id="E1-STIXWEBMAIN-56" stroke-width="1"></path>
@@ -2000,10 +2092,6 @@ AIMD(1, 0.5).<a href="#section-4.3-4" class="pilcrow">¶</a></p>
                   <path d="M16 662h270c129 0 232 -32 300 -91c65 -56 99 -134 99 -237c0 -119 -47 -213 -136 -270c-62 -40 -151 -64 -252 -64h-281v19c78 5 88 18 88 96v435c0 79 -12 88 -88 93v19zM206 583v-499c0 -35 9 -47 48 -47c103 0 158 12 218 52c70 47 104 126 104 239 c0 104 -32 173 -95 228c-59 52 -122 69 -222 69c-38 0 -53 -9 -53 -42Z" id="E1-STIXWEBMAIN-44" stroke-width="1"></path>
                   <path d="M304 -161l-12 -16c-158 90 -244 259 -244 429c0 185 87 329 247 424l9 -16c-139 -119 -170 -212 -170 -405c0 -186 30 -299 170 -416Z" id="E1-STIXWEBMAIN-28" stroke-width="1"></path>
                   <path d="M514 129h15c0 -76 -29 -139 -79 -139c-41 0 -66 45 -80 110c-35 -63 -76 -110 -154 -110c-108 0 -187 97 -187 233c0 127 74 237 196 237c87 0 136 -74 154 -146l45 136h97l-109 -263c10 -46 39 -135 69 -135c14 0 26 20 33 77zM331 208c-11 74 -37 224 -111 224 c-50 0 -101 -45 -101 -159c0 -74 17 -255 106 -255c69 0 96 137 106 190Z" id="E1-STIXWEBMAIN-3B1" stroke-width="1"></path>
-                  <path d="M472 428l-91 -345s-1 -2 -1 -11c0 -11 6 -17 14 -17c10 0 25 2 64 54l12 -12c-31 -47 -85 -107 -133 -107c-33 0 -42 23 -42 55c0 13 6 34 11 50h-4c-72 -92 -134 -105 -173 -105c-63 0 -89 55 -89 119c0 132 132 332 276 332c43 0 64 -24 66 -46h1l9 33h80zM367 341 c0 41 -12 71 -50 71c-68 0 -128 -87 -162 -171c-18 -45 -28 -89 -28 -124c0 -53 31 -66 58 -66c69 0 139 95 167 190c8 26 15 66 15 100Z" id="E1-STIXWEBNORMALI-1D44E" stroke-width="1"></path>
-                  <path d="M257 566c0 -26 -22 -46 -48 -46c-29 0 -48 20 -48 46c0 25 19 50 48 50c26 0 48 -25 48 -50zM227 441l-92 -364c-1 -6 -1 -10 -1 -14c0 -7 6 -10 13 -10c22 0 28 12 64 51l13 -10c-35 -45 -85 -105 -134 -105c-28 0 -40 19 -40 46c0 12 0 31 79 338c1 2 2 9 2 12 c0 17 -8 22 -31 22c-9 0 -21 -2 -28 -4l-3 16Z" id="E1-STIXWEBNORMALI-1D456" stroke-width="1"></path>
-                  <path d="M667 107l13 -11c-32 -54 -84 -104 -131 -104c-22 0 -39 10 -39 49c0 7 1 17 6 37l56 221c4 14 6 23 6 40c0 20 -6 38 -24 38c-54 0 -164 -181 -179 -242l-34 -135h-79l77 299c2 9 5 25 5 40c0 20 -5 38 -23 38c-52 0 -162 -181 -178 -242l-35 -135h-78l95 374 c0 18 -6 31 -33 31c-8 0 -19 -1 -27 -2l-2 14l157 24l-44 -169h6c94 143 154 169 192 169c37 0 55 -37 55 -81c0 -17 -3 -32 -9 -52l-10 -36h5c29 52 81 114 130 147c22 15 41 22 61 22c36 0 54 -26 54 -71c0 -18 -1 -37 -7 -61l-61 -231c-1 -3 -2 -9 -2 -12 c0 -8 6 -12 15 -12c17 0 43 16 62 53Z" id="E1-STIXWEBNORMALI-1D45A" stroke-width="1"></path>
-                  <path d="M527 668l-149 -598c-1 -3 -2 -9 -2 -12c0 -6 5 -9 15 -9c20 0 48 35 62 56l11 -12c-30 -45 -83 -105 -130 -105c-32 0 -40 23 -40 41c0 20 2 34 10 64h-5c-74 -93 -134 -105 -171 -105c-73 0 -88 74 -88 127c0 103 103 326 257 326c57 0 80 -26 81 -50h2l53 209 c1 4 2 8 2 12c0 13 -7 20 -33 20c-9 0 -20 -2 -27 -3l-4 15zM363 340c0 47 -15 71 -56 71c-99 0 -180 -200 -180 -296c0 -49 28 -66 56 -66c70 0 136 94 164 186c11 35 16 74 16 105Z" id="E1-STIXWEBNORMALI-1D451" stroke-width="1"></path>
                   <path d="M83 -141l-10 19c55 37 83 74 83 107c0 7 -6 13 -14 13s-18 -4 -29 -4c-37 0 -58 17 -58 51s24 57 60 57c45 0 80 -35 80 -87c0 -60 -43 -123 -112 -156Z" id="E1-STIXWEBMAIN-2C" stroke-width="1"></path>
                   <path d="M344 399l2 -1c78 -18 120 -92 120 -170c0 -122 -87 -238 -204 -238c-43 0 -71 8 -107 41v-167c0 -36 -10 -67 -16 -81h-84c10 21 16 52 16 81v509c0 242 88 310 196 310c79 0 160 -66 160 -155c0 -21 -4 -46 -15 -69c-13 -25 -34 -47 -68 -60zM155 485v-396 c0 -30 51 -67 104 -67c74 0 121 78 121 180c0 135 -54 179 -84 179c-21 0 -26 -7 -46 -7c-23 0 -39 10 -39 25c0 11 10 22 42 22c9 0 37 -8 52 -8c29 0 41 44 41 80c0 69 -19 162 -97 162c-62 0 -94 -62 -94 -155v-15Z" id="E1-STIXWEBMAIN-3B2" stroke-width="1"></path>
                   <path d="M29 660l12 16c153 -92 244 -259 244 -429c0 -185 -88 -327 -247 -424l-9 16c142 117 170 211 170 405c0 187 -25 302 -170 416Z" id="E1-STIXWEBMAIN-29" stroke-width="1"></path>
@@ -2026,172 +2114,142 @@ AIMD(1, 0.5).<a href="#section-4.3-4" class="pilcrow">¶</a></p>
                   <use xlink:href="#E1-STIXWEBMAIN-4D" x="3724" y="0"></use>
                   <use xlink:href="#E1-STIXWEBMAIN-44" x="4613" y="0"></use>
                   <use xlink:href="#E1-STIXWEBMAIN-28" x="5336" y="0"></use>
-                  <g transform="translate(5669,0)">
-                    <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
-                    <g transform="translate(543,-150)">
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                    </g>
-                  </g>
-                  <use xlink:href="#E1-STIXWEBMAIN-2C" x="7767" y="0"></use>
-                  <g transform="translate(8184,0)">
-                    <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                    <g transform="translate(496,-254)">
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                    </g>
-                  </g>
-                  <use xlink:href="#E1-STIXWEBMAIN-29" x="10235" y="0"></use>
-                  <use xlink:href="#E1-STIXWEBMAIN-3D" x="10846" y="0"></use>
-                  <g transform="translate(11810,0)">
+                  <use xlink:href="#E1-STIXWEBMAIN-3B1" x="5669" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-2C" x="6213" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-3B2" x="6630" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-29" x="7126" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-3D" x="7737" y="0"></use>
+                  <g transform="translate(8701,0)">
                     <use xlink:href="#E1-STIXWEBSIZE3-221A" x="0" y="-802"></use>
-                    <rect height="60" width="7774" x="1076" y="1704"></rect>
+                    <rect height="60" width="6079" x="1076" y="1704"></rect>
                     <g transform="translate(1076,0)">
                       <g transform="translate(120,0)">
-                        <rect height="60" width="7534" x="0" y="220"></rect>
-                        <g transform="translate(60,781)">
+                        <rect height="60" width="5839" x="0" y="220"></rect>
+                        <g transform="translate(767,737)">
                           <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
-                          <g transform="translate(543,-150)">
-                            <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                            <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                            <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                            <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                          </g>
-                          <use xlink:href="#E1-STIXWEBMAIN-2217" x="2320" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBMAIN-28" x="3065" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBMAIN-31" x="3399" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBMAIN-2B" x="4122" y="0"></use>
-                          <g transform="translate(5029,0)">
-                            <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                            <g transform="translate(496,-254)">
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                            </g>
-                          </g>
-                          <use xlink:href="#E1-STIXWEBMAIN-29" x="7080" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-2217" x="765" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-28" x="1511" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-31" x="1844" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-2B" x="2567" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-3B2" x="3475" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-29" x="3971" y="0"></use>
                         </g>
-                        <g transform="translate(130,-704)">
+                        <g transform="translate(60,-704)">
                           <use xlink:href="#E1-STIXWEBMAIN-32" x="0" y="0"></use>
                           <use xlink:href="#E1-STIXWEBMAIN-2217" x="722" y="0"></use>
                           <use xlink:href="#E1-STIXWEBMAIN-28" x="1468" y="0"></use>
                           <use xlink:href="#E1-STIXWEBMAIN-31" x="1801" y="0"></use>
                           <use xlink:href="#E1-STIXWEBMAIN-2212" x="2524" y="0"></use>
-                          <g transform="translate(3432,0)">
-                            <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                            <g transform="translate(496,-254)">
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                              <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                            </g>
-                          </g>
-                          <use xlink:href="#E1-STIXWEBMAIN-29" x="5483" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBMAIN-2217" x="6039" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D45D" x="6784" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-3B2" x="3432" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-29" x="3928" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBMAIN-2217" x="4484" y="0"></use>
+                          <use xlink:href="#E1-STIXWEBNORMALI-1D45D" x="5230" y="0"></use>
                         </g>
                       </g>
                     </g>
                   </g>
                 </g>
-              </svg><a href="#section-4.3-5.1.1" class="pilcrow">¶</a>
+              </svg><a href="#section-4.3-3.1.1" class="pilcrow">¶</a>
 </div>
 </div>
 <figcaption><a href="#figure-3" class="selfRef">Figure 3</a></figcaption></figure>
 </div>
-<p id="section-4.3-6">Based on the above analysis, CUBIC uses <a href="#eq4" class="xref">Figure 4</a> to estimate the window
-size <em>W<sub>est</sub></em> of AIMD(<span class="contact-name">α</span><em><sub>aimd</sub></em>,
-<span class="contact-name">β</span><em><sub>aimd</sub></em>) with<a href="#section-4.3-6" class="pilcrow">¶</a></p>
+<p id="section-4.3-4">By the same analysis, to achieve the same average window size as AIMD TCP
+that uses AIMD(1, 0.5), <span class="contact-name">α</span> must be equal to,<a href="#section-4.3-4" class="pilcrow">¶</a></p>
+<div id="section-4.3-5">
+          <div class="artwork art-svg alignCenter" id="section-4.3-5.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="5.843ex" role="img" viewBox="0 -1508.9 3955.4 2515.6" width="9.187ex">
+              <defs>
+                <path d="M61 510l-16 4c29 95 92 162 196 162c93 0 156 -55 156 -137c0 -48 -26 -98 -93 -138c44 -19 62 -31 83 -53c28 -31 44 -77 44 -129c0 -53 -17 -102 -46 -140c-48 -64 -143 -93 -232 -93c-73 0 -112 21 -112 57c0 21 18 36 41 36c17 0 33 -6 61 -26c37 -26 58 -31 86 -31 c74 0 130 68 130 153c0 76 -35 125 -104 145c-22 7 -45 10 -102 10v14c38 13 64 24 84 36c49 28 81 73 81 134c0 68 -42 102 -108 102c-62 0 -108 -32 -149 -106Z" id="E1-STIXWEBMAIN-33" stroke-width="1"></path>
+                <path d="M457 337c0 -11 -8 -23 -22 -31c-25 -15 -83 -15 -155 -56c63 -37 127 -40 154 -56c14 -8 21 -20 21 -32c0 -20 -14 -39 -39 -39c-41 0 -66 70 -143 114c0 -69 29 -131 29 -162c0 -21 -20 -42 -38 -42c-19 0 -38 21 -38 42c0 31 29 93 29 162c-52 -30 -99 -93 -121 -105 c-9 -5 -18 -8 -27 -8c-24 0 -37 15 -37 32c0 14 6 30 21 39c27 15 101 25 153 55c-52 30 -129 40 -157 57c-13 8 -20 19 -20 30c0 21 15 42 36 42c7 0 14 -2 22 -6c29 -17 73 -78 130 -108c0 69 -29 135 -29 166c0 21 19 40 38 40c18 0 38 -19 38 -40 c0 -31 -29 -96 -29 -165c72 38 99 91 126 107c8 4 15 6 22 6c21 0 36 -21 36 -42Z" id="E1-STIXWEBMAIN-2217" stroke-width="1"></path>
+                <path d="M394 0h-276v15c74 4 95 25 95 80v449c0 34 -9 49 -30 49c-10 0 -27 -5 -45 -12l-27 -10v14l179 91l9 -3v-597c0 -43 20 -61 95 -61v-15Z" id="E1-STIXWEBMAIN-31" stroke-width="1"></path>
+                <path d="M621 220h-557v66h557v-66Z" id="E1-STIXWEBMAIN-2212" stroke-width="1"></path>
+                <path d="M344 399l2 -1c78 -18 120 -92 120 -170c0 -122 -87 -238 -204 -238c-43 0 -71 8 -107 41v-167c0 -36 -10 -67 -16 -81h-84c10 21 16 52 16 81v509c0 242 88 310 196 310c79 0 160 -66 160 -155c0 -21 -4 -46 -15 -69c-13 -25 -34 -47 -68 -60zM155 485v-396 c0 -30 51 -67 104 -67c74 0 121 78 121 180c0 135 -54 179 -84 179c-21 0 -26 -7 -46 -7c-23 0 -39 10 -39 25c0 11 10 22 42 22c9 0 37 -8 52 -8c29 0 41 44 41 80c0 69 -19 162 -97 162c-62 0 -94 -62 -94 -155v-15Z" id="E1-STIXWEBMAIN-3B2" stroke-width="1"></path>
+                <path d="M636 220h-261v-261h-66v261h-261v66h261v261h66v-261h261v-66Z" id="E1-STIXWEBMAIN-2B" stroke-width="1"></path>
+              </defs>
+              <g fill="black" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
+                <use xlink:href="#E1-STIXWEBMAIN-33" x="0" y="0"></use>
+                <use xlink:href="#E1-STIXWEBMAIN-2217" x="722" y="0"></use>
+                <g transform="translate(1246,0)">
+                  <g transform="translate(342,0)">
+                    <rect height="60" width="2246" x="0" y="220"></rect>
+                    <g transform="translate(60,737)">
+                      <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBMAIN-2212" x="722" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBMAIN-3B2" x="1630" y="0"></use>
+                    </g>
+                    <g transform="translate(60,-704)">
+                      <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBMAIN-2B" x="722" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBMAIN-3B2" x="1630" y="0"></use>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg><a href="#section-4.3-5.1" class="pilcrow">¶</a>
+</div>
+</div>
+<p id="section-4.3-6">Thus, CUBIC uses <a href="#eq4" class="xref">Figure 4</a> to estimate the window
+size <em>W<sub>est</sub></em> in the AIMD-friendly region with<a href="#section-4.3-6" class="pilcrow">¶</a></p>
 <div id="section-4.3-7">
           <div class="artwork art-svg alignCenter" id="section-4.3-7.1">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="7.843ex" role="img" viewBox="0 -1939.5 7949.9 3376.7" width="18.464ex">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="7.176ex" role="img" viewBox="0 -1580.7 43055.4 3089.6" width="100ex">
               <defs>
                 <path d="M514 129h15c0 -76 -29 -139 -79 -139c-41 0 -66 45 -80 110c-35 -63 -76 -110 -154 -110c-108 0 -187 97 -187 233c0 127 74 237 196 237c87 0 136 -74 154 -146l45 136h97l-109 -263c10 -46 39 -135 69 -135c14 0 26 20 33 77zM331 208c-11 74 -37 224 -111 224 c-50 0 -101 -45 -101 -159c0 -74 17 -255 106 -255c69 0 96 137 106 190Z" id="E1-STIXWEBMAIN-3B1" stroke-width="1"></path>
-                <path d="M472 428l-91 -345s-1 -2 -1 -11c0 -11 6 -17 14 -17c10 0 25 2 64 54l12 -12c-31 -47 -85 -107 -133 -107c-33 0 -42 23 -42 55c0 13 6 34 11 50h-4c-72 -92 -134 -105 -173 -105c-63 0 -89 55 -89 119c0 132 132 332 276 332c43 0 64 -24 66 -46h1l9 33h80zM367 341 c0 41 -12 71 -50 71c-68 0 -128 -87 -162 -171c-18 -45 -28 -89 -28 -124c0 -53 31 -66 58 -66c69 0 139 95 167 190c8 26 15 66 15 100Z" id="E1-STIXWEBNORMALI-1D44E" stroke-width="1"></path>
+                <path d="M363 111l12 -13c-51 -60 -113 -109 -198 -109c-97 0 -137 78 -137 155c0 140 121 297 263 297c50 0 97 -27 97 -76c0 -38 -16 -70 -54 -70c-26 0 -38 21 -38 38c0 24 29 36 29 58c0 12 -10 21 -34 21c-119 0 -176 -179 -176 -259c0 -87 49 -109 94 -109 c61 0 107 33 142 67Z" id="E1-STIXWEBNORMALI-1D450" stroke-width="1"></path>
+                <path d="M444 428l-89 -348c-1 -4 -1 -6 -1 -9c0 -8 4 -14 14 -14c21 0 40 26 57 46l5 6l13 -11c-23 -33 -74 -107 -132 -107c-29 0 -40 19 -40 52c0 9 1 25 4 37l26 95h-1c-7 -5 -97 -126 -137 -156c-23 -17 -49 -28 -72 -28c-47 0 -61 36 -61 74c0 21 3 40 8 59l59 231 c4 15 6 21 6 25c0 12 -11 23 -33 23c-7 0 -19 -1 -26 -3l-3 15l157 26l-84 -326c-2 -9 -3 -16 -3 -24c0 -21 8 -34 26 -34c25 0 65 31 100 77c43 57 89 146 109 219l21 75h77Z" id="E1-STIXWEBNORMALI-1D462" stroke-width="1"></path>
+                <path d="M214 382l4 -4c33 32 72 63 121 63c70 0 111 -69 111 -151c0 -121 -109 -301 -266 -301c-53 0 -94 18 -139 48l144 563c1 4 2 8 2 11c-1 13 -16 21 -29 21c-10 0 -22 -1 -30 -4l-3 16l158 24zM179 252l-55 -215c0 -7 32 -19 55 -19c122 0 188 174 188 276 c0 70 -38 92 -71 92c-72 0 -106 -89 -117 -134Z" id="E1-STIXWEBNORMALI-1D44F" stroke-width="1"></path>
                 <path d="M257 566c0 -26 -22 -46 -48 -46c-29 0 -48 20 -48 46c0 25 19 50 48 50c26 0 48 -25 48 -50zM227 441l-92 -364c-1 -6 -1 -10 -1 -14c0 -7 6 -10 13 -10c22 0 28 12 64 51l13 -10c-35 -45 -85 -105 -134 -105c-28 0 -40 19 -40 46c0 12 0 31 79 338c1 2 2 9 2 12 c0 17 -8 22 -31 22c-9 0 -21 -2 -28 -4l-3 16Z" id="E1-STIXWEBNORMALI-1D456" stroke-width="1"></path>
-                <path d="M667 107l13 -11c-32 -54 -84 -104 -131 -104c-22 0 -39 10 -39 49c0 7 1 17 6 37l56 221c4 14 6 23 6 40c0 20 -6 38 -24 38c-54 0 -164 -181 -179 -242l-34 -135h-79l77 299c2 9 5 25 5 40c0 20 -5 38 -23 38c-52 0 -162 -181 -178 -242l-35 -135h-78l95 374 c0 18 -6 31 -33 31c-8 0 -19 -1 -27 -2l-2 14l157 24l-44 -169h6c94 143 154 169 192 169c37 0 55 -37 55 -81c0 -17 -3 -32 -9 -52l-10 -36h5c29 52 81 114 130 147c22 15 41 22 61 22c36 0 54 -26 54 -71c0 -18 -1 -37 -7 -61l-61 -231c-1 -3 -2 -9 -2 -12 c0 -8 6 -12 15 -12c17 0 43 16 62 53Z" id="E1-STIXWEBNORMALI-1D45A" stroke-width="1"></path>
-                <path d="M527 668l-149 -598c-1 -3 -2 -9 -2 -12c0 -6 5 -9 15 -9c20 0 48 35 62 56l11 -12c-30 -45 -83 -105 -130 -105c-32 0 -40 23 -40 41c0 20 2 34 10 64h-5c-74 -93 -134 -105 -171 -105c-73 0 -88 74 -88 127c0 103 103 326 257 326c57 0 80 -26 81 -50h2l53 209 c1 4 2 8 2 12c0 13 -7 20 -33 20c-9 0 -20 -2 -27 -3l-4 15zM363 340c0 47 -15 71 -56 71c-99 0 -180 -200 -180 -296c0 -49 28 -66 56 -66c70 0 136 94 164 186c11 35 16 74 16 105Z" id="E1-STIXWEBNORMALI-1D451" stroke-width="1"></path>
                 <path d="M637 320h-589v66h589v-66zM637 120h-589v66h589v-66Z" id="E1-STIXWEBMAIN-3D" stroke-width="1"></path>
                 <path d="M61 510l-16 4c29 95 92 162 196 162c93 0 156 -55 156 -137c0 -48 -26 -98 -93 -138c44 -19 62 -31 83 -53c28 -31 44 -77 44 -129c0 -53 -17 -102 -46 -140c-48 -64 -143 -93 -232 -93c-73 0 -112 21 -112 57c0 21 18 36 41 36c17 0 33 -6 61 -26c37 -26 58 -31 86 -31 c74 0 130 68 130 153c0 76 -35 125 -104 145c-22 7 -45 10 -102 10v14c38 13 64 24 84 36c49 28 81 73 81 134c0 68 -42 102 -108 102c-62 0 -108 -32 -149 -106Z" id="E1-STIXWEBMAIN-33" stroke-width="1"></path>
                 <path d="M457 337c0 -11 -8 -23 -22 -31c-25 -15 -83 -15 -155 -56c63 -37 127 -40 154 -56c14 -8 21 -20 21 -32c0 -20 -14 -39 -39 -39c-41 0 -66 70 -143 114c0 -69 29 -131 29 -162c0 -21 -20 -42 -38 -42c-19 0 -38 21 -38 42c0 31 29 93 29 162c-52 -30 -99 -93 -121 -105 c-9 -5 -18 -8 -27 -8c-24 0 -37 15 -37 32c0 14 6 30 21 39c27 15 101 25 153 55c-52 30 -129 40 -157 57c-13 8 -20 19 -20 30c0 21 15 42 36 42c7 0 14 -2 22 -6c29 -17 73 -78 130 -108c0 69 -29 135 -29 166c0 21 19 40 38 40c18 0 38 -19 38 -40 c0 -31 -29 -96 -29 -165c72 38 99 91 126 107c8 4 15 6 22 6c21 0 36 -21 36 -42Z" id="E1-STIXWEBMAIN-2217" stroke-width="1"></path>
                 <path d="M394 0h-276v15c74 4 95 25 95 80v449c0 34 -9 49 -30 49c-10 0 -27 -5 -45 -12l-27 -10v14l179 91l9 -3v-597c0 -43 20 -61 95 -61v-15Z" id="E1-STIXWEBMAIN-31" stroke-width="1"></path>
                 <path d="M621 220h-557v66h557v-66Z" id="E1-STIXWEBMAIN-2212" stroke-width="1"></path>
                 <path d="M344 399l2 -1c78 -18 120 -92 120 -170c0 -122 -87 -238 -204 -238c-43 0 -71 8 -107 41v-167c0 -36 -10 -67 -16 -81h-84c10 21 16 52 16 81v509c0 242 88 310 196 310c79 0 160 -66 160 -155c0 -21 -4 -46 -15 -69c-13 -25 -34 -47 -68 -60zM155 485v-396 c0 -30 51 -67 104 -67c74 0 121 78 121 180c0 135 -54 179 -84 179c-21 0 -26 -7 -46 -7c-23 0 -39 10 -39 25c0 11 10 22 42 22c9 0 37 -8 52 -8c29 0 41 44 41 80c0 69 -19 162 -97 162c-62 0 -94 -62 -94 -155v-15Z" id="E1-STIXWEBMAIN-3B2" stroke-width="1"></path>
-                <path d="M363 111l12 -13c-51 -60 -113 -109 -198 -109c-97 0 -137 78 -137 155c0 140 121 297 263 297c50 0 97 -27 97 -76c0 -38 -16 -70 -54 -70c-26 0 -38 21 -38 38c0 24 29 36 29 58c0 12 -10 21 -34 21c-119 0 -176 -179 -176 -259c0 -87 49 -109 94 -109 c61 0 107 33 142 67Z" id="E1-STIXWEBNORMALI-1D450" stroke-width="1"></path>
-                <path d="M444 428l-89 -348c-1 -4 -1 -6 -1 -9c0 -8 4 -14 14 -14c21 0 40 26 57 46l5 6l13 -11c-23 -33 -74 -107 -132 -107c-29 0 -40 19 -40 52c0 9 1 25 4 37l26 95h-1c-7 -5 -97 -126 -137 -156c-23 -17 -49 -28 -72 -28c-47 0 -61 36 -61 74c0 21 3 40 8 59l59 231 c4 15 6 21 6 25c0 12 -11 23 -33 23c-7 0 -19 -1 -26 -3l-3 15l157 26l-84 -326c-2 -9 -3 -16 -3 -24c0 -21 8 -34 26 -34c25 0 65 31 100 77c43 57 89 146 109 219l21 75h77Z" id="E1-STIXWEBNORMALI-1D462" stroke-width="1"></path>
-                <path d="M214 382l4 -4c33 32 72 63 121 63c70 0 111 -69 111 -151c0 -121 -109 -301 -266 -301c-53 0 -94 18 -139 48l144 563c1 4 2 8 2 11c-1 13 -16 21 -29 21c-10 0 -22 -1 -30 -4l-3 16l158 24zM179 252l-55 -215c0 -7 32 -19 55 -19c122 0 188 174 188 276 c0 70 -38 92 -71 92c-72 0 -106 -89 -117 -134Z" id="E1-STIXWEBNORMALI-1D44F" stroke-width="1"></path>
                 <path d="M636 220h-261v-261h-66v261h-261v66h261v261h66v-261h261v-66Z" id="E1-STIXWEBMAIN-2B" stroke-width="1"></path>
               </defs>
               <g fill="black" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
-                <g transform="translate(167,0)">
-                  <g transform="translate(-11,0)">
-                    <g transform="translate(0,731)">
-                      <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
-                      <g transform="translate(543,-150)">
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                      </g>
-                      <use xlink:href="#E1-STIXWEBMAIN-3D" x="2375" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBMAIN-33" x="3339" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBMAIN-2217" x="4061" y="0"></use>
-                      <g transform="translate(4585,0)">
-                        <g transform="translate(342,0)">
-                          <rect height="60" width="2578" x="0" y="220"></rect>
-                          <g transform="translate(60,634)">
-                            <use xlink:href="#E1-STIXWEBMAIN-31" transform="scale(0.707)" x="0" y="0"></use>
-                            <use xlink:href="#E1-STIXWEBMAIN-2212" transform="scale(0.707)" x="500" y="0"></use>
-                            <g transform="translate(838,0)">
-                              <use xlink:href="#E1-STIXWEBMAIN-3B2" transform="scale(0.707)" x="0" y="0"></use>
-                              <g transform="translate(351,-183)">
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.574)" x="0" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.574)" x="415" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.574)" x="890" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.574)" x="1360" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.574)" x="1672" y="0"></use>
-                              </g>
-                            </g>
-                          </g>
-                          <g transform="translate(60,-429)">
-                            <use xlink:href="#E1-STIXWEBMAIN-31" transform="scale(0.707)" x="0" y="0"></use>
-                            <use xlink:href="#E1-STIXWEBMAIN-2B" transform="scale(0.707)" x="500" y="0"></use>
-                            <g transform="translate(838,0)">
-                              <use xlink:href="#E1-STIXWEBMAIN-3B2" transform="scale(0.707)" x="0" y="0"></use>
-                              <g transform="translate(351,-183)">
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.574)" x="0" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.574)" x="415" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.574)" x="890" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.574)" x="1360" y="0"></use>
-                                <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.574)" x="1672" y="0"></use>
-                              </g>
-                            </g>
+                <g transform="translate(17081,0)">
+                  <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
+                  <g transform="translate(543,-150)">
+                    <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
+                    <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
+                    <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
+                    <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
+                    <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
+                  </g>
+                  <use xlink:href="#E1-STIXWEBMAIN-3D" x="2397" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-33" x="3360" y="0"></use>
+                  <use xlink:href="#E1-STIXWEBMAIN-2217" x="4083" y="0"></use>
+                  <g transform="translate(4606,0)">
+                    <g transform="translate(342,0)">
+                      <rect height="60" width="3823" x="0" y="220"></rect>
+                      <g transform="translate(60,781)">
+                        <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
+                        <use xlink:href="#E1-STIXWEBMAIN-2212" x="722" y="0"></use>
+                        <g transform="translate(1630,0)">
+                          <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
+                          <g transform="translate(496,-254)">
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
                           </g>
                         </g>
                       </g>
-                    </g>
-                    <g transform="translate(0,-1087)">
-                      <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                      <g transform="translate(496,-254)">
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                        <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
-                      </g>
-                      <use xlink:href="#E1-STIXWEBMAIN-3D" x="2328" y="0"></use>
-                      <g transform="translate(3292,0)">
-                        <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
-                        <g transform="translate(496,-254)">
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
-                          <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
+                      <g transform="translate(60,-704)">
+                        <use xlink:href="#E1-STIXWEBMAIN-31" x="0" y="0"></use>
+                        <use xlink:href="#E1-STIXWEBMAIN-2B" x="722" y="0"></use>
+                        <g transform="translate(1630,0)">
+                          <use xlink:href="#E1-STIXWEBMAIN-3B2" x="0" y="0"></use>
+                          <g transform="translate(496,-254)">
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
+                            <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
+                          </g>
                         </g>
                       </g>
                     </g>
@@ -2214,7 +2272,7 @@ of the congestion avoidance stage. After that, on every ACK,
 <figure id="figure-4">
           <div id="section-4.3-10.1">
             <div class="artwork art-svg alignCenter" id="section-4.3-10.1.1">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="5.343ex" role="img" viewBox="0 -1508.9 16251.3 2300.3" width="37.745ex">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="5.343ex" role="img" viewBox="0 -1508.9 16272.9 2300.3" width="37.795ex">
                 <defs>
                   <path d="M1101 653l-4 -16c-66 -3 -109 -44 -134 -77l-438 -576h-29v442h-11l-297 -442h-29v569c0 55 -33 84 -89 84h-10l4 16h288l-4 -16h-7c-39 0 -76 0 -76 -71v-377h5l226 332v61c0 31 -19 55 -82 55h-8l4 16h285l-4 -16h-18c-62 0 -71 -37 -71 -72v-395h6l278 370 c17 22 40 53 40 72c0 16 -13 25 -54 25h-17l4 16h242Z" id="E1-STIXWEBNORMALI-1D44A" stroke-width="1"></path>
                   <path d="M363 112l14 -13c-70 -86 -138 -110 -200 -110c-98 0 -137 84 -137 156c0 23 1 37 6 60c25 111 135 236 262 236c42 0 102 -14 102 -76c0 -127 -167 -176 -286 -182v-28c0 -64 52 -107 113 -107c42 0 90 18 126 64zM124 211h9c104 0 198 69 198 157c0 25 -19 43 -44 43 c-74 0 -134 -115 -163 -200Z" id="E1-STIXWEBNORMALI-1D452" stroke-width="1"></path>
@@ -2223,16 +2281,18 @@ of the congestion avoidance stage. After that, on every ACK,
                   <path d="M637 320h-589v66h589v-66zM637 120h-589v66h589v-66Z" id="E1-STIXWEBMAIN-3D" stroke-width="1"></path>
                   <path d="M636 220h-261v-261h-66v261h-261v66h261v261h66v-261h261v-66Z" id="E1-STIXWEBMAIN-2B" stroke-width="1"></path>
                   <path d="M514 129h15c0 -76 -29 -139 -79 -139c-41 0 -66 45 -80 110c-35 -63 -76 -110 -154 -110c-108 0 -187 97 -187 233c0 127 74 237 196 237c87 0 136 -74 154 -146l45 136h97l-109 -263c10 -46 39 -135 69 -135c14 0 26 20 33 77zM331 208c-11 74 -37 224 -111 224 c-50 0 -101 -45 -101 -159c0 -74 17 -255 106 -255c69 0 96 137 106 190Z" id="E1-STIXWEBMAIN-3B1" stroke-width="1"></path>
-                  <path d="M472 428l-91 -345s-1 -2 -1 -11c0 -11 6 -17 14 -17c10 0 25 2 64 54l12 -12c-31 -47 -85 -107 -133 -107c-33 0 -42 23 -42 55c0 13 6 34 11 50h-4c-72 -92 -134 -105 -173 -105c-63 0 -89 55 -89 119c0 132 132 332 276 332c43 0 64 -24 66 -46h1l9 33h80zM367 341 c0 41 -12 71 -50 71c-68 0 -128 -87 -162 -171c-18 -45 -28 -89 -28 -124c0 -53 31 -66 58 -66c69 0 139 95 167 190c8 26 15 66 15 100Z" id="E1-STIXWEBNORMALI-1D44E" stroke-width="1"></path>
+                  <path d="M363 111l12 -13c-51 -60 -113 -109 -198 -109c-97 0 -137 78 -137 155c0 140 121 297 263 297c50 0 97 -27 97 -76c0 -38 -16 -70 -54 -70c-26 0 -38 21 -38 38c0 24 29 36 29 58c0 12 -10 21 -34 21c-119 0 -176 -179 -176 -259c0 -87 49 -109 94 -109 c61 0 107 33 142 67Z" id="E1-STIXWEBNORMALI-1D450" stroke-width="1"></path>
+                  <path d="M444 428l-89 -348c-1 -4 -1 -6 -1 -9c0 -8 4 -14 14 -14c21 0 40 26 57 46l5 6l13 -11c-23 -33 -74 -107 -132 -107c-29 0 -40 19 -40 52c0 9 1 25 4 37l26 95h-1c-7 -5 -97 -126 -137 -156c-23 -17 -49 -28 -72 -28c-47 0 -61 36 -61 74c0 21 3 40 8 59l59 231 c4 15 6 21 6 25c0 12 -11 23 -33 23c-7 0 -19 -1 -26 -3l-3 15l157 26l-84 -326c-2 -9 -3 -16 -3 -24c0 -21 8 -34 26 -34c25 0 65 31 100 77c43 57 89 146 109 219l21 75h77Z" id="E1-STIXWEBNORMALI-1D462" stroke-width="1"></path>
+                  <path d="M214 382l4 -4c33 32 72 63 121 63c70 0 111 -69 111 -151c0 -121 -109 -301 -266 -301c-53 0 -94 18 -139 48l144 563c1 4 2 8 2 11c-1 13 -16 21 -29 21c-10 0 -22 -1 -30 -4l-3 16l158 24zM179 252l-55 -215c0 -7 32 -19 55 -19c122 0 188 174 188 276 c0 70 -38 92 -71 92c-72 0 -106 -89 -117 -134Z" id="E1-STIXWEBNORMALI-1D44F" stroke-width="1"></path>
                   <path d="M257 566c0 -26 -22 -46 -48 -46c-29 0 -48 20 -48 46c0 25 19 50 48 50c26 0 48 -25 48 -50zM227 441l-92 -364c-1 -6 -1 -10 -1 -14c0 -7 6 -10 13 -10c22 0 28 12 64 51l13 -10c-35 -45 -85 -105 -134 -105c-28 0 -40 19 -40 46c0 12 0 31 79 338c1 2 2 9 2 12 c0 17 -8 22 -31 22c-9 0 -21 -2 -28 -4l-3 16Z" id="E1-STIXWEBNORMALI-1D456" stroke-width="1"></path>
-                  <path d="M667 107l13 -11c-32 -54 -84 -104 -131 -104c-22 0 -39 10 -39 49c0 7 1 17 6 37l56 221c4 14 6 23 6 40c0 20 -6 38 -24 38c-54 0 -164 -181 -179 -242l-34 -135h-79l77 299c2 9 5 25 5 40c0 20 -5 38 -23 38c-52 0 -162 -181 -178 -242l-35 -135h-78l95 374 c0 18 -6 31 -33 31c-8 0 -19 -1 -27 -2l-2 14l157 24l-44 -169h6c94 143 154 169 192 169c37 0 55 -37 55 -81c0 -17 -3 -32 -9 -52l-10 -36h5c29 52 81 114 130 147c22 15 41 22 61 22c36 0 54 -26 54 -71c0 -18 -1 -37 -7 -61l-61 -231c-1 -3 -2 -9 -2 -12 c0 -8 6 -12 15 -12c17 0 43 16 62 53Z" id="E1-STIXWEBNORMALI-1D45A" stroke-width="1"></path>
-                  <path d="M527 668l-149 -598c-1 -3 -2 -9 -2 -12c0 -6 5 -9 15 -9c20 0 48 35 62 56l11 -12c-30 -45 -83 -105 -130 -105c-32 0 -40 23 -40 41c0 20 2 34 10 64h-5c-74 -93 -134 -105 -171 -105c-73 0 -88 74 -88 127c0 103 103 326 257 326c57 0 80 -26 81 -50h2l53 209 c1 4 2 8 2 12c0 13 -7 20 -33 20c-9 0 -20 -2 -27 -3l-4 15zM363 340c0 47 -15 71 -56 71c-99 0 -180 -200 -180 -296c0 -49 28 -66 56 -66c70 0 136 94 164 186c11 35 16 74 16 105Z" id="E1-STIXWEBNORMALI-1D451" stroke-width="1"></path>
                   <path d="M457 337c0 -11 -8 -23 -22 -31c-25 -15 -83 -15 -155 -56c63 -37 127 -40 154 -56c14 -8 21 -20 21 -32c0 -20 -14 -39 -39 -39c-41 0 -66 70 -143 114c0 -69 29 -131 29 -162c0 -21 -20 -42 -38 -42c-19 0 -38 21 -38 42c0 31 29 93 29 162c-52 -30 -99 -93 -121 -105 c-9 -5 -18 -8 -27 -8c-24 0 -37 15 -37 32c0 14 6 30 21 39c27 15 101 25 153 55c-52 30 -129 40 -157 57c-13 8 -20 19 -20 30c0 21 15 42 36 42c7 0 14 -2 22 -6c29 -17 73 -78 130 -108c0 69 -29 135 -29 166c0 21 19 40 38 40c18 0 38 -19 38 -40 c0 -31 -29 -96 -29 -165c72 38 99 91 126 107c8 4 15 6 22 6c21 0 36 -21 36 -42Z" id="E1-STIXWEBMAIN-2217" stroke-width="1"></path>
                   <path d="M492 413l-13 -45h-81c13 -15 17 -28 17 -50c0 -75 -53 -137 -141 -148c-59 -8 -88 -33 -88 -58c0 -63 233 -23 233 -148c0 -71 -66 -151 -215 -151c-134 0 -184 57 -184 115s55 88 117 108c-17 11 -24 30 -24 47c0 38 37 87 85 87v4c-67 15 -94 62 -94 109 c0 79 68 158 174 158c42 0 73 -13 88 -28h126zM336 349c0 37 -10 62 -54 62c-54 0 -98 -71 -98 -139c0 -46 12 -81 56 -81c71 0 96 102 96 158zM349 -69c0 78 -132 73 -192 95c-8 -5 -18 -10 -26 -16c-26 -19 -48 -45 -48 -72c0 -47 44 -97 139 -97c91 0 127 46 127 90Z" id="E1-STIXWEBNORMALI-1D454" stroke-width="1"></path>
+                  <path d="M667 107l13 -11c-32 -54 -84 -104 -131 -104c-22 0 -39 10 -39 49c0 7 1 17 6 37l56 221c4 14 6 23 6 40c0 20 -6 38 -24 38c-54 0 -164 -181 -179 -242l-34 -135h-79l77 299c2 9 5 25 5 40c0 20 -5 38 -23 38c-52 0 -162 -181 -178 -242l-35 -135h-78l95 374 c0 18 -6 31 -33 31c-8 0 -19 -1 -27 -2l-2 14l157 24l-44 -169h6c94 143 154 169 192 169c37 0 55 -37 55 -81c0 -17 -3 -32 -9 -52l-10 -36h5c29 52 81 114 130 147c22 15 41 22 61 22c36 0 54 -26 54 -71c0 -18 -1 -37 -7 -61l-61 -231c-1 -3 -2 -9 -2 -12 c0 -8 6 -12 15 -12c17 0 43 16 62 53Z" id="E1-STIXWEBNORMALI-1D45A" stroke-width="1"></path>
                   <path d="M467 96l-5 -6c-28 -34 -76 -98 -128 -98c-32 0 -41 23 -41 46c0 13 4 29 7 40l57 221c2 8 7 28 7 42c0 19 -6 38 -24 38c-38 0 -101 -86 -132 -133c-36 -54 -62 -101 -68 -122l-33 -124h-77l95 374c0 18 -3 32 -30 32c-10 0 -21 -2 -28 -3l-2 15l159 23l-51 -189h3 c5 0 54 70 56 73c40 50 100 116 160 116c44 0 56 -29 56 -62c0 -25 -6 -50 -11 -70l-59 -231c-1 -2 -1 -5 -1 -10c1 -6 4 -14 15 -14c24 0 48 36 62 53Z" id="E1-STIXWEBNORMALI-1D45B" stroke-width="1"></path>
                   <path d="M500 -125h-500v50h500v-50Z" id="E1-STIXWEBMAIN-5F" stroke-width="1"></path>
-                  <path d="M363 111l12 -13c-51 -60 -113 -109 -198 -109c-97 0 -137 78 -137 155c0 140 121 297 263 297c50 0 97 -27 97 -76c0 -38 -16 -70 -54 -70c-26 0 -38 21 -38 38c0 24 29 36 29 58c0 12 -10 21 -34 21c-119 0 -176 -179 -176 -259c0 -87 49 -109 94 -109 c61 0 107 33 142 67Z" id="E1-STIXWEBNORMALI-1D450" stroke-width="1"></path>
+                  <path d="M472 428l-91 -345s-1 -2 -1 -11c0 -11 6 -17 14 -17c10 0 25 2 64 54l12 -12c-31 -47 -85 -107 -133 -107c-33 0 -42 23 -42 55c0 13 6 34 11 50h-4c-72 -92 -134 -105 -173 -105c-63 0 -89 55 -89 119c0 132 132 332 276 332c43 0 64 -24 66 -46h1l9 33h80zM367 341 c0 41 -12 71 -50 71c-68 0 -128 -87 -162 -171c-18 -45 -28 -89 -28 -124c0 -53 31 -66 58 -66c69 0 139 95 167 190c8 26 15 66 15 100Z" id="E1-STIXWEBNORMALI-1D44E" stroke-width="1"></path>
                   <path d="M527 428l-4 -12c-67 -7 -95 -25 -133 -58l-106 -92l64 -152c15 -35 27 -59 53 -59c30 0 52 43 74 73l15 -11c-12 -21 -59 -128 -127 -128c-46 0 -67 53 -78 79l-63 147l-56 -49l-45 -166h-76l148 589c2 6 3 13 3 20c0 11 -10 22 -32 22c-9 0 -19 0 -27 -2l-3 14l158 25 l-113 -456l167 149c11 10 21 23 21 36c0 12 -16 19 -26 19h-12l4 12h194Z" id="E1-STIXWEBNORMALI-1D458" stroke-width="1"></path>
+                  <path d="M527 668l-149 -598c-1 -3 -2 -9 -2 -12c0 -6 5 -9 15 -9c20 0 48 35 62 56l11 -12c-30 -45 -83 -105 -130 -105c-32 0 -40 23 -40 41c0 20 2 34 10 64h-5c-74 -93 -134 -105 -171 -105c-73 0 -88 74 -88 127c0 103 103 326 257 326c57 0 80 -26 81 -50h2l53 209 c1 4 2 8 2 12c0 13 -7 20 -33 20c-9 0 -20 -2 -27 -3l-4 15zM363 340c0 47 -15 71 -56 71c-99 0 -180 -200 -180 -296c0 -49 28 -66 56 -66c70 0 136 94 164 186c11 35 16 74 16 105Z" id="E1-STIXWEBNORMALI-1D451" stroke-width="1"></path>
                   <path d="M531 450l-80 -289c-6 -23 -12 -46 -12 -70c0 -39 19 -61 59 -61c108 0 164 115 195 203c8 24 15 49 15 74c0 74 -59 66 -61 109c-2 36 30 42 54 42c42 0 47 -51 47 -83c0 -146 -105 -384 -276 -384c-69 0 -111 28 -111 100c0 42 12 85 23 125 c-40 -89 -122 -225 -234 -225c-56 0 -78 34 -78 87c0 33 11 64 19 95l47 177c3 9 5 19 5 29c0 24 -38 22 -54 22v15c53 9 105 23 155 44l4 -3l-81 -307c-3 -13 -11 -45 -11 -73c0 -26 6 -47 28 -47c58 1 129 114 153 151c53 81 79 159 110 269h84Z" id="E1-STIXWEBNORMALI-1D464" stroke-width="1"></path>
                 </defs>
                 <g fill="black" stroke="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)">
@@ -2255,14 +2315,15 @@ of the congestion avoidance stage. After that, on every ACK,
                   <g transform="translate(6100,0)">
                     <use xlink:href="#E1-STIXWEBMAIN-3B1" x="0" y="0"></use>
                     <g transform="translate(543,-150)">
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D44E" transform="scale(0.707)" x="0" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="502" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D45A" transform="scale(0.707)" x="814" y="0"></use>
-                      <use xlink:href="#E1-STIXWEBNORMALI-1D451" transform="scale(0.707)" x="1524" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="0" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBNORMALI-1D462" transform="scale(0.707)" x="415" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBNORMALI-1D44F" transform="scale(0.707)" x="890" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBNORMALI-1D456" transform="scale(0.707)" x="1360" y="0"></use>
+                      <use xlink:href="#E1-STIXWEBNORMALI-1D450" transform="scale(0.707)" x="1671" y="0"></use>
                     </g>
                   </g>
-                  <use xlink:href="#E1-STIXWEBMAIN-2217" x="8420" y="0"></use>
-                  <g transform="translate(8944,0)">
+                  <use xlink:href="#E1-STIXWEBMAIN-2217" x="8442" y="0"></use>
+                  <g transform="translate(8965,0)">
                     <g transform="translate(342,0)">
                       <rect height="60" width="6845" x="0" y="220"></rect>
                       <g transform="translate(60,707)">
@@ -2298,7 +2359,7 @@ of the congestion avoidance stage. After that, on every ACK,
 <p id="section-4.3-11">Note that once <em>W<sub>est</sub></em> reaches <em>W<sub>max</sub></em>, that is,
 <em>W<sub>est</sub></em> &gt;= <em>W<sub>max</sub></em>, CUBIC needs to start probing to
 determine the new value of <em>W<sub>max</sub></em>. At this point,
-<span class="contact-name">α</span><em><sub>aimd</sub></em> SHOULD be set to 1 to ensure that
+<span class="contact-name">α</span><em><sub>cubic</sub></em> SHOULD be set to 1 to ensure that
 CUBIC can achieve the same congestion window increment as AIMD
 TCP, which uses AIMD(1, 0.5).<a href="#section-4.3-11" class="pilcrow">¶</a></p>
 </section>
@@ -4212,6 +4273,9 @@ information about TCP security concerns can be found in <span>[<a href="#RFC5681
 </li>
           <li class="normal" id="section-b.1-1.2">clarity on setting alpha<em><sub>aimd</sub></em> to 1
 (<a href="https://github.com/NTAP/rfc8312bis/issues/68">68</a>)<a href="#section-b.1-1.2" class="pilcrow">¶</a>
+</li>
+          <li class="normal" id="section-b.1-1.3">introduce alpha<em><sub>cubic</sub></em>
+(<a href="https://github.com/NTAP/rfc8312bis/issues/64">64</a>)<a href="#section-b.1-1.3" class="pilcrow">¶</a>
 </li>
         </ul>
 </section>

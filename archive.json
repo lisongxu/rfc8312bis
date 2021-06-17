@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-15T00:00:36.029254+00:00",
+  "timestamp": "2021-06-17T00:00:52.370526+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -2240,16 +2240,32 @@
       "state": "OPEN",
       "author": "larseggert",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "goelvidhi"
+      ],
       "labels": [
-        "WG LC",
-        "help wanted"
+        "WG LC"
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>>2: Section 3.1 \"After a window reduction in response to a congestion event is\r\n     detected by duplicate ACKs or Explicit Congestion Notification-Echo\r\n     (ECN-Echo, ECE) ACKs [RFC3168], CUBIC remembers the congestion window...\"\r\n>\r\n>   I think the events detected by RACK (or PTO for QUIC) can also be included here.\r\n",
       "createdAt": "2021-06-01T09:06:41Z",
-      "updatedAt": "2021-06-01T09:20:17Z",
+      "updatedAt": "2021-06-16T16:14:12Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "thanks @nsdyoshi. Do you have any specific suggestions in terms of how much should we talk about RACK or should we just add a one-liner?",
+          "createdAt": "2021-06-16T07:05:55Z",
+          "updatedAt": "2021-06-16T07:05:55Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "one liner works for me, but, I think the following part in Section 4.6 also needs to be updated.\r\n\r\n> When a packet loss is detected by duplicate ACKs or by receiving packets carrying ECE flags, CUBIC updates Wmax and reduces cwnd and ssthresh immediately as described below\r\n",
+          "createdAt": "2021-06-16T16:14:12Z",
+          "updatedAt": "2021-06-16T16:14:12Z"
+        }
+      ]
     },
     {
       "number": 63,
@@ -2299,7 +2315,7 @@
       "id": "MDU6SXNzdWU5MDgwODIzNjM=",
       "title": "Two meanings for a_aimd",
       "url": "https://github.com/NTAP/rfc8312bis/issues/64",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "larseggert",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -2310,8 +2326,8 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n> 5: Section 4.3  It seems to me that there are two meanings for a_aimd in this section. \r\n    One is the additive factor for CUBIC and the other is a generic parameter for AIMD() function. \r\n    This looks a bit confusing to me.\r\n",
       "createdAt": "2021-06-01T09:11:50Z",
-      "updatedAt": "2021-06-12T16:44:18Z",
-      "closedAt": null,
+      "updatedAt": "2021-06-16T06:38:43Z",
+      "closedAt": "2021-06-16T06:38:43Z",
       "comments": [
         {
           "author": "goelvidhi",
@@ -2375,6 +2391,13 @@
           "body": "I think the explanation would be clearer if the formula for AVG_AIMD was rewritten using **unsuffixed** \u03b1 and \u03b2 parameters, \u03b1(aimd) and \u03b2(aimd) were used exclusively to refer to the Reno parameters, and \u03b1(cubic) and \u03b2(cubic) used to refer exclusively to the CUBIC parameters.\r\n\r\nThe process of calculating \u03b1(cubic) can then be explained as equalising the values of AVG_AIMD(\u03b1(aimd), \u03b2(aimd)) and AVG_AIMD(\u03b1(cubic), \u03b2(cubic)).",
           "createdAt": "2021-06-12T16:44:18Z",
           "updatedAt": "2021-06-12T16:44:18Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I have opened a PR where I use alpha and beta for general equation and further derivation of alpha.\r\nLater I use alpha_cubic to refer to Cubic specifically. Feel free to review and provide comments on the PR.",
+          "createdAt": "2021-06-15T08:50:47Z",
+          "updatedAt": "2021-06-15T08:50:47Z"
         }
       ]
     },
@@ -7124,6 +7147,83 @@
           "body": "Thanks",
           "createdAt": "2021-06-10T13:23:57Z",
           "updatedAt": "2021-06-10T13:23:57Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 75,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjcwMTkyNTIy",
+      "title": "clarify alpha and add alpha_cubic",
+      "url": "https://github.com/NTAP/rfc8312bis/pull/75",
+      "state": "MERGED",
+      "author": "goelvidhi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #64 \r\n\r\nAs this PR includes changes to formulas in Section 4.3, reviewing the HTML version would be easier. You can download it from Editor's copy under Checks tab.\r\n",
+      "createdAt": "2021-06-15T08:34:05Z",
+      "updatedAt": "2021-06-16T06:38:43Z",
+      "baseRepository": "NTAP/rfc8312bis",
+      "baseRefName": "main",
+      "baseRefOid": "f6a00afafb1eab3b4ce9b5fb0d72845153d1a095",
+      "headRepository": "goelvidhi/rfc8312bis",
+      "headRefName": "alpha-aimd",
+      "headRefOid": "f7b3079ad4ddeb0314db8306296e5a822b493545",
+      "closedAt": "2021-06-16T06:38:43Z",
+      "mergedAt": "2021-06-16T06:38:43Z",
+      "mergedBy": "larseggert",
+      "mergeCommit": {
+        "oid": "2660495987ec2472118d83c42083ed16767fe0fd"
+      },
+      "comments": [
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "@chromi you can download the build artifacts here, which include the formatted versions: https://github.com/NTAP/rfc8312bis/suites/2996841176/artifacts/67729624",
+          "createdAt": "2021-06-15T10:14:06Z",
+          "updatedAt": "2021-06-15T10:14:06Z"
+        },
+        {
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks for this revision! It is very clear and I really like it.",
+          "createdAt": "2021-06-16T02:37:09Z",
+          "updatedAt": "2021-06-16T02:37:09Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "looks very good to me.",
+          "createdAt": "2021-06-16T05:41:39Z",
+          "updatedAt": "2021-06-16T05:41:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjgzNzg2MzIz",
+          "commit": {
+            "abbreviatedOid": "f7b3079"
+          },
+          "author": "chromi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "This looks like it could be a significant improvement.  I look forward to seeing the formatted version.",
+          "createdAt": "2021-06-15T09:40:27Z",
+          "updatedAt": "2021-06-15T09:40:27Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg0NjY3OTI2",
+          "commit": {
+            "abbreviatedOid": "f7b3079"
+          },
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thank you!",
+          "createdAt": "2021-06-16T02:35:26Z",
+          "updatedAt": "2021-06-16T02:35:26Z",
           "comments": []
         }
       ]

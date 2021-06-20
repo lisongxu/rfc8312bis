@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-17T00:00:52.370526+00:00",
+  "timestamp": "2021-06-20T00:00:41.814661+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -2473,7 +2473,7 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>8: Section 4.3  I am not very sure why segments_acked is used rather than byted_acked here. What is the benefit of it?\r\n    How do we calculate when the acks are split? \r\n   Also, I think it should be clarified that cwnd is expressed in segments here in this case.\r\n",
       "createdAt": "2021-06-01T09:14:35Z",
-      "updatedAt": "2021-06-13T11:15:49Z",
+      "updatedAt": "2021-06-18T08:58:20Z",
       "closedAt": null,
       "comments": [
         {
@@ -2524,6 +2524,20 @@
           "body": "> If the size of each segment = 1 MSS, then segments_acked = bytes_acked / 1 MSS.\r\nI was wondering the case where the size of segment is not 1 MSS or the case where the size of segment is 1 MSS, but the received ACK covers only part of the segment. It seems to me that this point is a bit ambiguous in the draft.\r\n\r\n> Good question, is that being done for new Reno or other congestion controllers?\r\n\r\nRight. It's described in RFC6582 and RFC6675. \r\nI've thought about this and I think the explanation of the draft on this point is sufficient.",
           "createdAt": "2021-06-13T11:15:49Z",
           "updatedAt": "2021-06-13T11:15:49Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> I was wondering the case where the size of segment is not 1 MSS or the case where the size of segment is 1 MSS, but the received ACK covers only part of the segment. It seems to me that this point is a bit ambiguous in the draft.\r\n\r\nIf I were to use segments_acked as an implementor, I would just do bytes_acked / 1 MSS, whatever may be the size of the segment sent or ACKed. For example if MSS = 1448 and 1000 byte segment was sent and acked, then segments_acked = 1000/1448 and if 500 bytes were acked, then segments_acked = 500/1448.\r\n\r\nIf OTOH I was using bytes_acked in my implementation, then all one needs to do multiple or divide by 1MSS wherever necessary. ",
+          "createdAt": "2021-06-17T08:45:14Z",
+          "updatedAt": "2021-06-17T08:45:14Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "OK. In this case, I think it would be better to mention segments_acked is float number and can be less than 1.\r\nAlso, I think it would be good to provide a guidance for an implementation uses bytes_acked instead of segments_acked.\r\nSomething like multiplying segment-based parameters by 1 MSS. ",
+          "createdAt": "2021-06-18T08:58:20Z",
+          "updatedAt": "2021-06-18T08:58:20Z"
         }
       ]
     },
@@ -2627,7 +2641,7 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>> 10: Section 4.5: \" The convex profile ensure that the window increases very slowly at the beginning..\"\r\n>\r\n>   I am wondering how much this part is accurate. Because of Principal 2,  even though cwnd is increased \r\n   through convex profile, I think it will be overridden by linear growth by AIMD. ",
       "createdAt": "2021-06-01T09:16:17Z",
-      "updatedAt": "2021-06-13T11:15:16Z",
+      "updatedAt": "2021-06-19T14:19:46Z",
       "closedAt": null,
       "comments": [
         {
@@ -2692,6 +2706,41 @@
           "body": "Yes, It's true for high BDP network case. But, I was thinking about small BDP network case. It seems to me that Section 4.5 doesn't talk about high BDP cases only. Because, even small BDP network cases will have convex region.\r\n\r\nIn small BDP case, I think w_est grows lot faster and the beginning of concave region will be overridden by it and convex region will start when cwnd becomes  lots bigger than w_max. \r\nIn this situation, I'm not very sure to say \"window increases very slowly at the beginning\" \r\n\r\nI am thinking that the explanation something like this might describe the behavior more accurately.\r\n\r\nUnless it is not overridden by AIMD window increase, CUBIC is very careful in this region.  \r\nThe convex profile aims that the window increases very slowly at the beginning and gradually increases its increase rate. ",
           "createdAt": "2021-06-13T11:15:16Z",
           "updatedAt": "2021-06-13T11:15:16Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@nsdyoshi I was able to plot the graph you initially posted with some sample values (W_max = 100, cwnd_start = 70, RTT = 75ms).\r\n<img width=\"711\" alt=\"Screen Shot 2021-06-17 at 12 51 28 AM\" src=\"https://user-images.githubusercontent.com/10913828/122354787-2e642300-cf06-11eb-988e-02f52c307b1c.png\">\r\n\r\nSection 4.5 starts with \r\n> When receiving an ACK in congestion avoidance, if CUBIC is not in the\r\nAIMD-friendly region and *cwnd* is larger than or equal to\r\n*W<sub>max</sub>*, then CUBIC is in the convex region.\r\n\r\nIMO, this clarifies in the very beginning that this section talks about when we are not in overridden by AIMD. \r\n\r\n",
+          "createdAt": "2021-06-17T07:52:47Z",
+          "updatedAt": "2021-06-17T08:16:04Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "right. but, when I look at the picture you've shown, the concave region starts at the point where cwnd is way bigger than w_max.\r\nIn this case, I'm not sure if the following description of the concave region is accurate. \r\nI think it would be good if we can provide more explanations here.\r\n\r\n> In this region, CUBIC is very careful.  The convex profile ensures\r\n   that the window increases very slowly at the beginning and gradually\r\n   increases its increase rate. ",
+          "createdAt": "2021-06-18T08:14:37Z",
+          "updatedAt": "2021-06-18T08:14:37Z"
+        },
+        {
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks, Yoshi.  That \"very slowly\" is about the behavior of cubic in the convex region, which is defined in Section 4.2 \"The concave region, if CUBIC is not in the AIMD-friendly region and cwnd is less than Wmax. The convex region, if CUBIC is not in the AIMD-friendly region and cwnd is greater than Wmax.\" ",
+          "createdAt": "2021-06-18T20:19:34Z",
+          "updatedAt": "2021-06-18T20:20:12Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hmm. sorry. I meant convex region.\r\nI quoted the texts from Section 4.5. So, it should describe the behavior of cubic in the convex region. \r\nThe 'very careful' and 'very slowly' describes the behavior of cubic well when BDP is large. (as shown in the first figure Vidhi put) \r\nHowever, I think this description is not very accurate when BDP is small (as shown in the second figure from Vidhi) \r\nThat's why I am thinking it might be good to add some more explanations here.",
+          "createdAt": "2021-06-19T10:00:40Z",
+          "updatedAt": "2021-06-19T10:00:40Z"
+        },
+        {
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Both the 'very careful' and 'very slowly' describe the behavior of the convex/concave regions (that is, the behavior of the blue line).  If the green line is above the blue line, then CUBIC does not enter the convex or concave regions. Hope this helps.\r\n",
+          "createdAt": "2021-06-19T14:19:46Z",
+          "updatedAt": "2021-06-19T14:19:46Z"
         }
       ]
     },

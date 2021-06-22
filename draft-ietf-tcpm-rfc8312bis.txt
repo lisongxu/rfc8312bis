@@ -6,13 +6,13 @@ TCPM                                                               L. Xu
 Internet-Draft                                                       UNL
 Obsoletes: 8312 (if approved)                                      S. Ha
 Intended status: Standards Track                                Colorado
-Expires: 18 December 2021                                        I. Rhee
+Expires: 24 December 2021                                        I. Rhee
                                                                   Bowery
                                                                  V. Goel
                                                               Apple Inc.
                                                           L. Eggert, Ed.
                                                                   NetApp
-                                                            16 June 2021
+                                                            22 June 2021
 
 
                CUBIC for Fast and Long-Distance Networks
@@ -71,7 +71,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 December 2021.
+   This Internet-Draft will expire on 24 December 2021.
 
 Copyright Notice
 
@@ -558,11 +558,12 @@ Table of Contents
    is highly asynchronous, some amount of perturbation is always
    possible without causing a major change in available bandwidth.
 
-   In this region, CUBIC is very careful.  The convex profile ensures
-   that the window increases very slowly at the beginning and gradually
-   increases its increase rate.  We also call this region the "maximum
-   probing phase", since CUBIC is searching for a new _W_max_. In this
-   region, _cwnd_ MUST be incremented by
+   Unless it is overridden by the AIMD window increase, CUBIC is very
+   careful in this region.  The convex profile aims to increase the
+   window very slowly at the beginning when _cwnd_ is around _W_max_ and
+   then gradually increases its rate of increase.  We also call this
+   region the "maximum probing phase", since CUBIC is searching for a
+   new _W_max_. In this region, _cwnd_ MUST be incremented by
 
                                target - cwnd
                                -------------
@@ -1135,7 +1136,7 @@ Appendix B.  Evolution of CUBIC
 
 B.1.  Since draft-ietf-tcpm-rfc8312bis-02
 
-   *  add applicability to QUIC and SCTP. (61
+   *  add applicability to QUIC and SCTP (61
       (https://github.com/NTAP/rfc8312bis/issues/61))
 
    *  clarity on setting alpha__aimd_ to 1 (68
@@ -1143,6 +1144,9 @@ B.1.  Since draft-ietf-tcpm-rfc8312bis-02
 
    *  introduce alpha__cubic_ (64 (https://github.com/NTAP/rfc8312bis/
       issues/64))
+
+   *  clarify _cwnd_ growth in convex region (69
+      (https://github.com/NTAP/rfc8312bis/issues/69))
 
 B.2.  Since draft-ietf-tcpm-rfc8312bis-01
 

@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-20T00:00:41.814661+00:00",
+  "timestamp": "2021-06-22T00:00:46.025821+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -2641,7 +2641,7 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>> 10: Section 4.5: \" The convex profile ensure that the window increases very slowly at the beginning..\"\r\n>\r\n>   I am wondering how much this part is accurate. Because of Principal 2,  even though cwnd is increased \r\n   through convex profile, I think it will be overridden by linear growth by AIMD. ",
       "createdAt": "2021-06-01T09:16:17Z",
-      "updatedAt": "2021-06-19T14:19:46Z",
+      "updatedAt": "2021-06-21T21:48:57Z",
       "closedAt": null,
       "comments": [
         {
@@ -2741,6 +2741,41 @@
           "body": "Both the 'very careful' and 'very slowly' describe the behavior of the convex/concave regions (that is, the behavior of the blue line).  If the green line is above the blue line, then CUBIC does not enter the convex or concave regions. Hope this helps.\r\n",
           "createdAt": "2021-06-19T14:19:46Z",
           "updatedAt": "2021-06-19T14:19:46Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Lisong, \r\n\r\nIn my thoughts, convex region starts when cwnd >= w_max and it's not in TCP friendly region. So, I thought the starting point of the convex region is the red dot in the following figure.\r\n\r\n![image](https://user-images.githubusercontent.com/73777040/122666467-3ae4b780-d162-11eb-9f5d-48685ecfb58c.png)\r\n\r\nBut, I am guessing you consider the starting point of the convex region is always cwnd = w_max. But, when cwnd_cubic < w_est, CUBIC is not in the region. (Please correct me if I miss something here)\r\n\r\nIn my reading of the draft, I think both interpretations are possible. I believe it would be good if we can eliminate ambiguity here.",
+          "createdAt": "2021-06-20T08:15:13Z",
+          "updatedAt": "2021-06-20T08:26:33Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> In my thoughts, convex region starts when cwnd >= w_max and it's not in TCP friendly region.\r\n\r\n@nsdyoshi you are right and this is what the draft mentions in Section 4.5\r\n\r\n> So, I thought the starting point of the convex region is the red dot in the following figure. \r\n\r\nCubic is in convex region at this red dot even if the convex profile starts at cwnd = W_max.\r\n\r\nPerhaps you are concerned about the below line and now I fully understand your concern. Although the intro in Section 4.5 says that Cubic starts at red dot, the below line is a bit contradictory as it probably assumes that Cubic will always be in convex region around W_max.\r\n> In this region, CUBIC is very careful. The convex profile ensures that the window increases very slowly at the beginning and gradually increases its increase rate. \r\n\r\nCombining your earlier suggestion with a minor modification, how about this:\r\n> Unless it is not overridden by AIMD window increase, CUBIC is very careful in this region. The convex profile aims that the window increases very slowly at the beginning when the cwnd is around W_max and then gradually increases its increase rate.\r\n",
+          "createdAt": "2021-06-20T09:24:31Z",
+          "updatedAt": "2021-06-20T09:26:10Z"
+        },
+        {
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Yoshi, Finally I see the confusion. Thank you!\r\n\r\nHi Vidhi, \"Unless it is not overridden by AIMD window increase, CUBIC is very careful in this region\" should be \"Unless it is overridden by AIMD window increase, CUBIC is very careful in this region\"? Thank you!\r\n\r\n",
+          "createdAt": "2021-06-20T14:25:27Z",
+          "updatedAt": "2021-06-20T14:25:27Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Vidhi,\r\nThanks for the updates. I think we will need to update it as Lisong suggested, but other than that, it works for me.\r\nThanks for pointing out, Lisong!",
+          "createdAt": "2021-06-21T05:56:02Z",
+          "updatedAt": "2021-06-21T05:56:02Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks. Fixed it in #76 ",
+          "createdAt": "2021-06-21T21:48:57Z",
+          "updatedAt": "2021-06-21T21:48:57Z"
         }
       ]
     },
@@ -7273,6 +7308,112 @@
           "body": "Thank you!",
           "createdAt": "2021-06-16T02:35:26Z",
           "updatedAt": "2021-06-16T02:35:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 76,
+      "id": "MDExOlB1bGxSZXF1ZXN0Njc0MDA0NzYz",
+      "title": "clarify cwnd growth in convex region",
+      "url": "https://github.com/NTAP/rfc8312bis/pull/76",
+      "state": "OPEN",
+      "author": "goelvidhi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #69 ",
+      "createdAt": "2021-06-20T09:40:17Z",
+      "updatedAt": "2021-06-21T22:16:41Z",
+      "baseRepository": "NTAP/rfc8312bis",
+      "baseRefName": "main",
+      "baseRefOid": "2660495987ec2472118d83c42083ed16767fe0fd",
+      "headRepository": "goelvidhi/rfc8312bis",
+      "headRefName": "convex-growth",
+      "headRefOid": "9e65823ad80e6856f90ba7ad5a349fd300bb476f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> \"Unless it is not overridden by AIMD window increase, CUBIC is very careful in this region\" should be \"Unless it is overridden by AIMD window increase, CUBIC is very careful in this region\"? Thank you\r\n\r\ndone",
+          "createdAt": "2021-06-21T21:47:39Z",
+          "updatedAt": "2021-06-21T21:47:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg3OTc3OTI1",
+          "commit": {
+            "abbreviatedOid": "fe7455d"
+          },
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "\"Unless it is not overridden by AIMD window increase, CUBIC is very careful in this region\" should be \"Unless it is overridden by AIMD window increase, CUBIC is very careful in this region\"? Thank you",
+          "createdAt": "2021-06-21T02:03:56Z",
+          "updatedAt": "2021-06-21T02:03:56Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg4NjYxODg3",
+          "commit": {
+            "abbreviatedOid": "fe7455d"
+          },
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2021-06-21T16:48:58Z",
+          "updatedAt": "2021-06-21T16:50:16Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "```suggestion\r\ncareful in this region. The convex profile aims to\r\nincrease the window very slowly at the beginning when *cwnd* is\r\n```",
+              "createdAt": "2021-06-21T16:48:58Z",
+              "updatedAt": "2021-06-21T16:50:16Z"
+            },
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\naround *W<sub>max</sub>* and then gradually increases its rate of increase.\r\n```",
+              "createdAt": "2021-06-21T16:49:46Z",
+              "updatedAt": "2021-06-21T16:50:16Z"
+            },
+            {
+              "originalPosition": 9,
+              "body": "```suggestion\r\nUnless it is not overridden by the AIMD window increase, CUBIC is very\r\n```",
+              "createdAt": "2021-06-21T16:49:57Z",
+              "updatedAt": "2021-06-21T16:50:16Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg4ODg4NjI3",
+          "commit": {
+            "abbreviatedOid": "9e65823"
+          },
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks!",
+          "createdAt": "2021-06-21T21:48:59Z",
+          "updatedAt": "2021-06-21T21:48:59Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg4OTA0MDAz",
+          "commit": {
+            "abbreviatedOid": "9e65823"
+          },
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-06-21T22:16:41Z",
+          "updatedAt": "2021-06-21T22:16:41Z",
           "comments": []
         }
       ]

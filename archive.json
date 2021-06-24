@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-22T00:00:46.025821+00:00",
+  "timestamp": "2021-06-24T00:00:49.173569+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -2473,7 +2473,7 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>8: Section 4.3  I am not very sure why segments_acked is used rather than byted_acked here. What is the benefit of it?\r\n    How do we calculate when the acks are split? \r\n   Also, I think it should be clarified that cwnd is expressed in segments here in this case.\r\n",
       "createdAt": "2021-06-01T09:14:35Z",
-      "updatedAt": "2021-06-18T08:58:20Z",
+      "updatedAt": "2021-06-22T09:22:33Z",
       "closedAt": null,
       "comments": [
         {
@@ -2538,6 +2538,13 @@
           "body": "OK. In this case, I think it would be better to mention segments_acked is float number and can be less than 1.\r\nAlso, I think it would be good to provide a guidance for an implementation uses bytes_acked instead of segments_acked.\r\nSomething like multiplying segment-based parameters by 1 MSS. ",
           "createdAt": "2021-06-18T08:58:20Z",
           "updatedAt": "2021-06-18T08:58:20Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "ok, please review #77.",
+          "createdAt": "2021-06-22T09:22:32Z",
+          "updatedAt": "2021-06-22T09:22:32Z"
         }
       ]
     },
@@ -2630,7 +2637,7 @@
       "id": "MDU6SXNzdWU5MDgwODYxOTA=",
       "title": "Overridden by linear growth by AIMD",
       "url": "https://github.com/NTAP/rfc8312bis/issues/69",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "larseggert",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -2641,8 +2648,8 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>> 10: Section 4.5: \" The convex profile ensure that the window increases very slowly at the beginning..\"\r\n>\r\n>   I am wondering how much this part is accurate. Because of Principal 2,  even though cwnd is increased \r\n   through convex profile, I think it will be overridden by linear growth by AIMD. ",
       "createdAt": "2021-06-01T09:16:17Z",
-      "updatedAt": "2021-06-21T21:48:57Z",
-      "closedAt": null,
+      "updatedAt": "2021-06-22T07:20:03Z",
+      "closedAt": "2021-06-22T07:20:03Z",
       "comments": [
         {
           "author": "goelvidhi",
@@ -2851,7 +2858,7 @@
       ],
       "body": "[Yoshi said](https://mailarchive.ietf.org/arch/msg/tcpm/W-t1q8q6Q0Ofjcp0iXOgmY18mr0):\r\n>12: Section 5.2 and Section 5.3. Do these results are based on the algorithms and the parameter values \r\n   described in the draft?  If there're differences, I think it should be described. \r\n",
       "createdAt": "2021-06-01T09:17:41Z",
-      "updatedAt": "2021-06-08T02:06:44Z",
+      "updatedAt": "2021-06-22T13:14:29Z",
       "closedAt": null,
       "comments": [
         {
@@ -2860,6 +2867,34 @@
           "body": "@nsdyoshi Thanks, Yoshi. I guess you refer to the tables in Sections 5.1 and 5.2. Yes they are calculated for the algorithm and parameters described in the draft, and the source code to generate these tables is available on the github. ",
           "createdAt": "2021-06-08T02:02:30Z",
           "updatedAt": "2021-06-08T02:02:30Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@nsdyoshi is there any action item here?",
+          "createdAt": "2021-06-22T02:52:17Z",
+          "updatedAt": "2021-06-22T02:52:17Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Oh. sorry. I forgot to reply this one. If there's no difference, it's fine for me. \r\nIn my understanding, the CUBIC in the original paper uses b_cubic=0.8. So, I thought if the values in the tables were created when the paper was written, the values might not be very accurate.\r\n",
+          "createdAt": "2021-06-22T08:31:25Z",
+          "updatedAt": "2021-06-22T08:32:00Z"
+        },
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "We should probably say that these values are for the current version of CUBIC.",
+          "createdAt": "2021-06-22T10:13:33Z",
+          "updatedAt": "2021-06-22T10:13:33Z"
+        },
+        {
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yes, the tables have been updated, and source code to generate the tables is available on github. Thanks",
+          "createdAt": "2021-06-22T13:14:29Z",
+          "updatedAt": "2021-06-22T13:14:29Z"
         }
       ]
     }
@@ -7317,24 +7352,26 @@
       "id": "MDExOlB1bGxSZXF1ZXN0Njc0MDA0NzYz",
       "title": "clarify cwnd growth in convex region",
       "url": "https://github.com/NTAP/rfc8312bis/pull/76",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "goelvidhi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #69 ",
       "createdAt": "2021-06-20T09:40:17Z",
-      "updatedAt": "2021-06-21T22:16:41Z",
+      "updatedAt": "2021-06-22T07:20:03Z",
       "baseRepository": "NTAP/rfc8312bis",
       "baseRefName": "main",
       "baseRefOid": "2660495987ec2472118d83c42083ed16767fe0fd",
       "headRepository": "goelvidhi/rfc8312bis",
       "headRefName": "convex-growth",
       "headRefOid": "9e65823ad80e6856f90ba7ad5a349fd300bb476f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2021-06-22T07:20:03Z",
+      "mergedAt": "2021-06-22T07:20:03Z",
+      "mergedBy": "larseggert",
+      "mergeCommit": {
+        "oid": "594ebe73d2b0ee0fc99f8912ef56c6b763655013"
+      },
       "comments": [
         {
           "author": "goelvidhi",
@@ -7415,6 +7452,215 @@
           "createdAt": "2021-06-21T22:16:41Z",
           "updatedAt": "2021-06-21T22:16:41Z",
           "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg5MTQzNjUx",
+          "commit": {
+            "abbreviatedOid": "9e65823"
+          },
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-06-22T07:19:44Z",
+          "updatedAt": "2021-06-22T07:19:44Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 77,
+      "id": "MDExOlB1bGxSZXF1ZXN0Njc1MjMyOTk2",
+      "title": "add guidance for bytes acked and clarification for segments_acked",
+      "url": "https://github.com/NTAP/rfc8312bis/pull/77",
+      "state": "OPEN",
+      "author": "goelvidhi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #67 ",
+      "createdAt": "2021-06-22T09:13:22Z",
+      "updatedAt": "2021-06-23T22:57:20Z",
+      "baseRepository": "NTAP/rfc8312bis",
+      "baseRefName": "main",
+      "baseRefOid": "594ebe73d2b0ee0fc99f8912ef56c6b763655013",
+      "headRepository": "goelvidhi/rfc8312bis",
+      "headRefName": "segment-or-bytes-acked",
+      "headRefOid": "72ee4570b772a91b3a358577104e9d42177f350d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "See my comment in the review - is this always a decimal or only when <1?",
+          "createdAt": "2021-06-22T16:52:52Z",
+          "updatedAt": "2021-06-22T16:52:52Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> See my comment in the review - is this always a decimal or only when <1?\r\n\r\nIt is decimal always. Although most implementations don't do decimal computations and simply wait for one full congestion window to be acknowledged before incrementing the cwnd by alpha * 1 (segment)\r\n\r\n\r\n",
+          "createdAt": "2021-06-23T20:57:53Z",
+          "updatedAt": "2021-06-23T20:57:53Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I can't see Junho's and Yoshi's comment about SACK'ed bytes here.. was it deleted?",
+          "createdAt": "2021-06-23T21:04:18Z",
+          "updatedAt": "2021-06-23T21:04:18Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "For my sanity, I will paste it from my email,\r\nJunho said,\r\n> I think it's 1.5. Also another question - does it include SACK'd size?\r\n\r\nYoshi replied,\r\n>  think including SACKed bytes is an interesting question. I am thinking that if TCP receives SACKed packets, it means it's in recovery phase.\r\nIn my understanding, CUBIC doesn't touch the behavior in recovery phase. w_est will be initialized when TCP goes into congestion avoidance phase, which means after recovery phase has finished. So, I am thinking that we don't need to think about whether we should include SACKed bytes or not.\r\nBut, I might overlook something, please let me know if there's situations where CUBIC should handle SACKed packets.\r\n\r\n\r\nI agree with Yoshi, we don't talk about recovery phase in detail but we allow an implementation to use a recovery algorithm\r\n> For both packet loss\r\n   and congestion detection through ECN, the sender MAY employ a Fast\r\n   Recovery algorithm to gradually adjust the congestion window to its\r\n   new reduced _ssthresh_ value.",
+          "createdAt": "2021-06-23T21:09:01Z",
+          "updatedAt": "2021-06-23T21:09:01Z"
+        },
+        {
+          "author": "junhochoi",
+          "authorAssociation": "NONE",
+          "body": "I didn't remove my comment \u2753 \r\n\r\n> For my sanity, I will paste it from my email,\r\n> Junho said,\r\n> \r\n> > I think it's 1.5. Also another question - does it include SACK'd size?\r\n> \r\n> Yoshi replied,\r\n> \r\n> > think including SACKed bytes is an interesting question. I am thinking that if TCP receives SACKed packets, it means it's in recovery phase.\r\n> > In my understanding, CUBIC doesn't touch the behavior in recovery phase. w_est will be initialized when TCP goes into congestion avoidance phase, which means after recovery phase has finished. So, I am thinking that we don't need to think about whether we should include SACKed bytes or not.\r\n> > But, I might overlook something, please let me know if there's situations where CUBIC should handle SACKed packets.\r\n> \r\n> I agree with Yoshi, we don't talk about recovery phase in detail but we allow an implementation to use a recovery algorithm\r\n> \r\n> > For both packet loss\r\n> > and congestion detection through ECN, the sender MAY employ a Fast\r\n> > Recovery algorithm to gradually adjust the congestion window to its\r\n> > new reduced _ssthresh_ value.\r\n\r\nFor example, when the sender received an ACK which doesn't move snd.una but with one SACK record (dupack) which is not enough to trigger the congestion event. Similar thing can happen with RACK's reordering threshold I think.",
+          "createdAt": "2021-06-23T21:31:53Z",
+          "updatedAt": "2021-06-23T21:38:50Z"
+        },
+        {
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I see. yes, when we see small amount of re-ordering, you might receive SACKed packets.\r\nIn this case, I think you could include SACKed packets, but when it's ACKed accumulatively later, you will need to make sure you won't double count them.",
+          "createdAt": "2021-06-23T22:15:09Z",
+          "updatedAt": "2021-06-23T22:15:09Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Aren't SACK'ed segments (before congestion event) covered in SACK RFC6675?\r\nI would personally refrain from adding any SACK related details to Cubic or any specific congestion control spec.",
+          "createdAt": "2021-06-23T22:38:00Z",
+          "updatedAt": "2021-06-23T22:38:00Z"
+        },
+        {
+          "author": "junhochoi",
+          "authorAssociation": "NONE",
+          "body": "@goelvidhi @nsdyoshi thanks for insights!\r\n\r\nI asked about this because segments_acked is defined as \"acked size in segment(or bytes)\" and \"acked\" doesn't only means moving snd.una with SACK. Also QUIC RFC9002 \"acked packet\" always includes SACK'ed ones. So I thought the implementer might be confused what to use.\r\n\r\nAfter thinking a little more.. SACK is optional as far as I understand, I think it might be good to leave as is.",
+          "createdAt": "2021-06-23T22:57:20Z",
+          "updatedAt": "2021-06-23T22:57:20Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg5MzA2Mzc4",
+          "commit": {
+            "abbreviatedOid": "e7cae81"
+          },
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2021-06-22T10:00:20Z",
+          "updatedAt": "2021-06-22T10:02:04Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nImplementations can use bytes to express window sizes, which would\r\n```",
+              "createdAt": "2021-06-22T10:00:21Z",
+              "updatedAt": "2021-06-22T10:02:04Z"
+            },
+            {
+              "originalPosition": 18,
+              "body": "What if an ACK ACKs 1.5 MSS-sized segments? Is it 1 or 1.5 then?\r\n```suggestion\r\nNumber of MSS-sized segments acked when an ACK is received. This\r\nnumber can be a decimal less than 1 when an ACK acknowledges a\r\nsegment smaller than the MSS.\r\n```",
+              "createdAt": "2021-06-22T10:01:48Z",
+              "updatedAt": "2021-06-22T10:02:38Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3Njg5NDkyNzk5",
+          "commit": {
+            "abbreviatedOid": "e7cae81"
+          },
+          "author": "lisongxu",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thank you!",
+          "createdAt": "2021-06-22T13:17:20Z",
+          "updatedAt": "2021-06-22T13:17:20Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjkwMzQwODEx",
+          "commit": {
+            "abbreviatedOid": "72ee457"
+          },
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-06-23T08:10:11Z",
+          "updatedAt": "2021-06-23T08:10:11Z",
+          "comments": []
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjkxMDM2ODQ5",
+          "commit": {
+            "abbreviatedOid": "72ee457"
+          },
+          "author": "junhochoi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-23T18:57:00Z",
+          "updatedAt": "2021-06-23T18:57:00Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "I think 1.5 is allowed.\r\nAlso another question - does it include SACK'd size?",
+              "createdAt": "2021-06-23T18:57:00Z",
+              "updatedAt": "2021-06-23T18:57:22Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjkxMDkxMzM4",
+          "commit": {
+            "abbreviatedOid": "72ee457"
+          },
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-23T20:04:35Z",
+          "updatedAt": "2021-06-23T20:04:35Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "@goelvidhi?",
+              "createdAt": "2021-06-23T20:04:35Z",
+              "updatedAt": "2021-06-23T20:04:35Z"
+            }
+          ]
+        },
+        {
+          "id": "MDE3OlB1bGxSZXF1ZXN0UmV2aWV3NjkxMTExNjc2",
+          "commit": {
+            "abbreviatedOid": "72ee457"
+          },
+          "author": "nsdyoshi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2021-06-23T20:30:16Z",
+          "updatedAt": "2021-06-23T20:30:17Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "I think including SACKed bytes is an interesting question. I am thinking that if TCP receives SACKed packets, it means it's in recovery phase.\r\n\r\nIn my understanding, CUBIC doesn't touch the behavior in recovery phase. w_est will be initialized when TCP goes into congestion avoidance phase, which means after recovery phase has finished. So, I am thinking that we don't need to think about whether we should include SACKed bytes or not. \r\nBut, I might overlook something, please let me know if there's situations where CUBIC should handle SACKed packets.",
+              "createdAt": "2021-06-23T20:30:17Z",
+              "updatedAt": "2021-06-23T20:30:17Z"
+            }
+          ]
         }
       ]
     }

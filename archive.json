@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-24T00:00:49.173569+00:00",
+  "timestamp": "2021-06-27T00:01:04.924991+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -7480,13 +7480,13 @@
       "labels": [],
       "body": "Closes #67 ",
       "createdAt": "2021-06-22T09:13:22Z",
-      "updatedAt": "2021-06-23T22:57:20Z",
+      "updatedAt": "2021-06-25T08:07:00Z",
       "baseRepository": "NTAP/rfc8312bis",
       "baseRefName": "main",
       "baseRefOid": "594ebe73d2b0ee0fc99f8912ef56c6b763655013",
       "headRepository": "goelvidhi/rfc8312bis",
       "headRefName": "segment-or-bytes-acked",
-      "headRefOid": "72ee4570b772a91b3a358577104e9d42177f350d",
+      "headRefOid": "1f7843e9cb3bf9f4792a72770cd3f0972f2f98fb",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -7547,6 +7547,55 @@
           "body": "@goelvidhi @nsdyoshi thanks for insights!\r\n\r\nI asked about this because segments_acked is defined as \"acked size in segment(or bytes)\" and \"acked\" doesn't only means moving snd.una with SACK. Also QUIC RFC9002 \"acked packet\" always includes SACK'ed ones. So I thought the implementer might be confused what to use.\r\n\r\nAfter thinking a little more.. SACK is optional as far as I understand, I think it might be good to leave as is.",
           "createdAt": "2021-06-23T22:57:20Z",
           "updatedAt": "2021-06-23T22:57:20Z"
+        },
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "The comments didn't get deleted, they are inside my PR review. Yes, this is confusing.",
+          "createdAt": "2021-06-24T08:06:30Z",
+          "updatedAt": "2021-06-24T08:06:30Z"
+        },
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "Should we make it clearer that this is always decimal, but stacks can be approximate in their math?",
+          "createdAt": "2021-06-24T08:07:10Z",
+          "updatedAt": "2021-06-24T08:07:10Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@larseggert, how does this look,\r\n\r\nNumber of MSS-sized segments acked when an ACK is received. This\r\n number is a decimal and it can be less than 1 when an ACK acknowledges a\r\n segment smaller than the MSS.",
+          "createdAt": "2021-06-24T08:43:24Z",
+          "updatedAt": "2021-06-24T08:43:59Z"
+        },
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "I'd maybe say \"...is a decimal and can therefore take on non-integer values when an ACK acknowledges data that is not MSS-sized. Specifically, it can be less than 1 when an ACK acknowledges a segment smaller than the MSS...\" or something like that?",
+          "createdAt": "2021-06-24T08:55:19Z",
+          "updatedAt": "2021-06-24T08:55:19Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "ok, I took your suggestion and made some minor edits. Please take a look.\r\n\r\nFor some reason, the inclusive check is getting cancelled immediately after I push.",
+          "createdAt": "2021-06-24T09:01:50Z",
+          "updatedAt": "2021-06-24T09:01:50Z"
+        },
+        {
+          "author": "larseggert",
+          "authorAssociation": "MEMBER",
+          "body": "I need to look into why, ignore for now",
+          "createdAt": "2021-06-24T10:30:35Z",
+          "updatedAt": "2021-06-24T10:30:35Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@larseggert, this PR is ready to go once you approve it. Not sure if we need to fix the inclusivity check before merging.",
+          "createdAt": "2021-06-25T08:07:00Z",
+          "updatedAt": "2021-06-25T08:07:00Z"
         }
       ],
       "reviews": [

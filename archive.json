@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-06-27T00:01:04.924991+00:00",
+  "timestamp": "2021-07-08T00:01:03.711175+00:00",
   "repo": "NTAP/rfc8312bis",
   "labels": [
     {
@@ -7480,7 +7480,7 @@
       "labels": [],
       "body": "Closes #67 ",
       "createdAt": "2021-06-22T09:13:22Z",
-      "updatedAt": "2021-06-25T08:07:00Z",
+      "updatedAt": "2021-07-06T21:49:15Z",
       "baseRepository": "NTAP/rfc8312bis",
       "baseRefName": "main",
       "baseRefOid": "594ebe73d2b0ee0fc99f8912ef56c6b763655013",
@@ -7596,6 +7596,13 @@
           "body": "@larseggert, this PR is ready to go once you approve it. Not sure if we need to fix the inclusivity check before merging.",
           "createdAt": "2021-06-25T08:07:00Z",
           "updatedAt": "2021-06-25T08:07:00Z"
+        },
+        {
+          "author": "goelvidhi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@larseggert, should we merge this PR?",
+          "createdAt": "2021-07-06T21:49:15Z",
+          "updatedAt": "2021-07-06T21:49:15Z"
         }
       ],
       "reviews": [

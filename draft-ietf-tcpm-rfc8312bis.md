@@ -581,10 +581,11 @@ of the congestion avoidance stage. After that, on every ACK,
 *W<sub>est</sub>* is updated using {{eq4}}. Note that, this equation
 is for a connection in which Appropriate Byte Counting (ABC) {{!RFC3465}}
 is disabled. For a connection with ABC enabled, this equation should be
-adjusted using the number of acknowldged bytes instead of acknowldged segments.
-Also note that, this equation works for connections with Delayed ACK {{!RFC5681}}
-both enabled and disabled, as *segments_acked* will be different based on
-the actually acknoledged segments by an ACK.  
+adjusted using the number of acknowledged  bytes instead of acknowledged
+segments. Also note that, this equation works for connections with
+Delayed ACK {{!RFC5681}} both enabled and disabled, as
+*segments_acked* will be different based on
+the actually acknowledged  segments by an ACK.  
 
 ~~~ math
 W_{est} = W_{est} + α_{cubic} * \frac{segments\_acked}{cwnd}

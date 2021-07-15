@@ -542,7 +542,7 @@ The AIMD-friendly region is designed according to the analysis in
 {{FHP00}}, which studies the performance of an AIMD algorithm with an
 additive factor of {{{α}{}}} (segments per *RTT*) and
 a multiplicative factor of {{{β}{}}}, denoted by
-AIMD({{{α}{}}}, {{{β}{}}}).
+AIMD({{{α}{}}}, {{{β}{}}}). *p* is the packet loss rate.
 Specifically, the average congestion window size of
 AIMD({{{α}{}}}, {{{β}{}}}) can be
 calculated using {{eq3}}.
@@ -1015,6 +1015,9 @@ Richard Scheffenegger and Alexander Zimmermann originally co-authored
      and link the issue number to the GitHub issue page. -->
 
 ## Since draft-ietf-tcpm-rfc8312bis-02
+
+- Decription of packet loss rate *p*
+  ([#65](https://github.com/NTAP/rfc8312bis/issues/65))
 
 - Clarification of TCP Friendly Equation for ABC and Delayed ACK
   ([#66](https://github.com/NTAP/rfc8312bis/issues/66))

@@ -6,13 +6,13 @@ TCPM                                                               L. Xu
 Internet-Draft                                                       UNL
 Obsoletes: 8312 (if approved)                                      S. Ha
 Intended status: Standards Track                                Colorado
-Expires: 25 December 2021                                        I. Rhee
+Expires: 16 January 2022                                         I. Rhee
                                                                   Bowery
                                                                  V. Goel
                                                               Apple Inc.
                                                           L. Eggert, Ed.
                                                                   NetApp
-                                                            23 June 2021
+                                                            15 July 2021
 
 
                CUBIC for Fast and Long-Distance Networks
@@ -71,7 +71,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 December 2021.
+   This Internet-Draft will expire on 16 January 2022.
 
 Copyright Notice
 
@@ -334,6 +334,10 @@ Table of Contents
 
    The unit of all window sizes in this document is segments of the
    maximum segment size (MSS), and the unit of all times is seconds.
+   Implementations can use bytes to express window sizes, which would
+   require factoring in the maximum segment size wherever necessary and
+   replacing _segments_acked_ with the number of bytes acknowledged in
+   Figure 4.
 
 4.1.1.  Constants of Interest
 
@@ -392,7 +396,11 @@ Table of Contents
    AIMD-friendly region, that is, an estimate for the congestion window
    of AIMD TCP.
 
-   _segments_acked_: Number of segments acked when an ACK is received.
+   _segments_acked_: Number of MSS-sized segments acked when an ACK is
+   received.  This number will be a decimal value when an ACK
+   acknowledges an amount of data that is not MSS-sized.  Specifically,
+   it can be less than 1 when an ACK acknowledges a segment smaller than
+   the MSS.
 
 4.2.  Window Increase Function
 
@@ -1136,17 +1144,20 @@ Appendix B.  Evolution of CUBIC
 
 B.1.  Since draft-ietf-tcpm-rfc8312bis-02
 
-   *  add applicability to QUIC and SCTP (61
+   *  add applicability to QUIC and SCTP (#61
       (https://github.com/NTAP/rfc8312bis/issues/61))
 
-   *  clarity on setting alpha__aimd_ to 1 (68
+   *  clarity on setting alpha__aimd_ to 1 (#68
       (https://github.com/NTAP/rfc8312bis/issues/68))
 
-   *  introduce alpha__cubic_ (64 (https://github.com/NTAP/rfc8312bis/
+   *  introduce alpha__cubic_ (#64 (https://github.com/NTAP/rfc8312bis/
       issues/64))
 
-   *  clarify _cwnd_ growth in convex region (69
+   *  clarify _cwnd_ growth in convex region (#69
       (https://github.com/NTAP/rfc8312bis/issues/69))
+
+   *  add guidance for using bytes and mention that segments count is
+      decimal (#67 (https://github.com/NTAP/rfc8312bis/issues/67))
 
 B.2.  Since draft-ietf-tcpm-rfc8312bis-01
 

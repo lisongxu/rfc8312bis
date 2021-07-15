@@ -585,7 +585,7 @@ adjusted using the number of acknowledged  bytes instead of acknowledged
 segments. Also note that, this equation works for connections with
 Delayed ACK {{!RFC5681}} both enabled and disabled, as
 *segments_acked* will be different based on
-the actually acknowledged  segments by an ACK.  
+the segments actually acknowledged by an ACK.  
 
 ~~~ math
 W_{est} = W_{est} + α_{cubic} * \frac{segments\_acked}{cwnd}
